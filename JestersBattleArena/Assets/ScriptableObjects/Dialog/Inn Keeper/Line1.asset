@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf19ebe0f9c03b42b973c96c2501f33, type: 3}
   m_Name: Line1
   m_EditorClassIdentifier: 
-  text: Hello world
+  text: 'Welcome, weary traveler, to the Rusty Tankard Inn. A warm fire and a cold
+    mug of ale await you. What can I do for you today? '

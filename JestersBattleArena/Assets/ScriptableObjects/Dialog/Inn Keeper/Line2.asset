@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf19ebe0f9c03b42b973c96c2501f33, type: 3}
   m_Name: Line2
   m_EditorClassIdentifier: 
-  text: Yes!
+  text: 'Ah, looking for a bit of intrigue, are you? Well, here''s what''s been whispered
+    around these parts about the emperor:'

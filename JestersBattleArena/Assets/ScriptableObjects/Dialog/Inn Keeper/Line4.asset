@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf19ebe0f9c03b42b973c96c2501f33, type: 3}
   m_Name: Line4
   m_EditorClassIdentifier: 
-  text: Choice 2
+  text: There's a hooded traveler who arrived late last night, draped in a dark cloak
+    that conceals his features. He has been keeping to himself, but rumors say hes
+    here on some secretive mission. No one knows his true purpose, but he seems to
+    know something about the arena combatants.

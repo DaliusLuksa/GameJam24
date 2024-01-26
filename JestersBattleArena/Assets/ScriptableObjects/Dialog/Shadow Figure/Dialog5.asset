@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb8b69f402fabda418c634f1cd80b2eb, type: 3}
+  m_Name: Dialog5
+  m_EditorClassIdentifier: 
+  line: {fileID: 11400000, guid: c8162902eeff5cd4a8a92b4b4ef77888, type: 2}
+  character: {fileID: 11400000, guid: 9bfc938e03f26704fb33abd421c2f560, type: 2}
+  nextDialog: {fileID: 11400000, guid: 1cb9662f7e23b9c4aa4d92ee259f8764, type: 2}
+  choices: []
+  rewards: []
+  isClueGiven: 0

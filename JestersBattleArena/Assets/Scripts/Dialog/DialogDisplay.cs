@@ -1,7 +1,6 @@
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class DialogDisplay : MonoBehaviour
@@ -12,34 +11,38 @@ public class DialogDisplay : MonoBehaviour
     private Dialog dialog;
     public GameObject choiceButtonPrefab;
     public GameObject DialogNextButton;
-    void Start()
-    {
-        gameObject.SetActive(false);
-    }
+    public GameObject DialogSelection;
+    public Image speakerImage;
 
     public void loadDialog(Dialog newDialog)
     {
         dialog = newDialog;
+        if(closeDialogIfEmpty(dialog)) {
+            return;
+        };
         updateDialog(dialog);
         gameObject.SetActive(true);
+        DialogSelection.gameObject.SetActive(false);
     }
 
     public void showNextDialog()
     {
         dialog = dialog.nextDialog;
-
-        if (dialog == null) {
-            gameObject.SetActive(false);
-
+        if(closeDialogIfEmpty(dialog)) {
             return;
-        }
-
+        };
         updateDialog(dialog);
     }
 
     void updateDialog(Dialog dialog) {
         dialogText.text = dialog.line.text;
         speakerName.text = dialog.character.characterName;
+        speakerImage = dialog.character.image;
+
+        if(dialog.isClueGiven) {
+            string randomColor = ClueManager.instance.addEmperorsColorClue();
+            dialogText.text = dialogText.text.Replace("{insert color}", randomColor);
+        }
 
         if(dialog.choices.Any(x => x != null)) {
             updateChoices();
@@ -68,9 +71,20 @@ public class DialogDisplay : MonoBehaviour
         }
     }
 
-    void onChoiceSelection(Dialog dialog) {
-        updateDialog(dialog);
+    bool closeDialogIfEmpty(Dialog dialog) {
+        if (dialog == null) {
+            gameObject.SetActive(false);
+            DialogSelection.gameObject.SetActive(true);
+
+            return true;
+        }
+         return false;
+    }
+
+    void onChoiceSelection(Dialog newDialog) {
         removeChoices();
+        loadDialog(newDialog.nextDialog);
+        
         DialogNextButton.SetActive(true);
     }
 }

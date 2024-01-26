@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb8b69f402fabda418c634f1cd80b2eb, type: 3}
   m_Name: Choice1
   m_EditorClassIdentifier: 
-  line: {fileID: 11400000, guid: b3c3805a1a9418c43b0150c29ec29d58, type: 2}
+  line: {fileID: 11400000, guid: 91444f1d77fab4f4bb1812ca04edf5a3, type: 2}
   character: {fileID: 11400000, guid: c95f3215eb741bb42aa62fc8c1ededdb, type: 2}
   nextDialog: {fileID: 0}
   choices:
-  - {fileID: 11400000, guid: 69f15c55392cdbe44be14fc83e347660, type: 2}
-  - {fileID: 11400000, guid: 73f8e919f07f7174eb3ead9c6a23d758, type: 2}
+  - {fileID: 11400000, guid: a1b0d584ae8d9d74196e8e4889ce1f5d, type: 2}
+  - {fileID: 11400000, guid: 26f80702f675c2d4782eac7fc33796dd, type: 2}
+  - {fileID: 11400000, guid: d9783c3122a20a344b121566eb82acf8, type: 2}
+  - {fileID: 11400000, guid: 392789eb06a83bf4185c320f1db38f2d, type: 2}
+  - {fileID: 11400000, guid: ffd515655041cca4193c2c405eae1761, type: 2}
+  rewards: []
+  isClueGiven: 0

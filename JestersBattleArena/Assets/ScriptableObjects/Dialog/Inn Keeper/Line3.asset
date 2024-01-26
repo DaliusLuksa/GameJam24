@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf19ebe0f9c03b42b973c96c2501f33, type: 3}
   m_Name: Line3
   m_EditorClassIdentifier: 
-  text: Choice 1
+  text: A wise choice, seeking the best in town! If you're in need of quality wares,
+    the local blacksmith is your go-to. A gruff yet skilled craftsman, Olaf Ironforge,
+    runs the forge just down the street.

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb8b69f402fabda418c634f1cd80b2eb, type: 3}
+  m_Name: choices2choice3
+  m_EditorClassIdentifier: 
+  line: {fileID: 11400000, guid: 72df3afa56972784086ae537b112fd64, type: 2}
+  character: {fileID: 0}
+  nextDialog: {fileID: 11400000, guid: 5f64bfd9b58933849885f86cd2afe41b, type: 2}
+  choices: []
+  rewards: []
+  isClueGiven: 0

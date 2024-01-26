@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   line: {fileID: 11400000, guid: 4eba970bbd696f34fa86ed0f8202ac66, type: 2}
   character: {fileID: 11400000, guid: c95f3215eb741bb42aa62fc8c1ededdb, type: 2}
-  nextDialog: {fileID: 11400000, guid: da017499f6a30f342a3d1d731f914add, type: 2}
+  nextDialog: {fileID: 11400000, guid: 7e9d5d50726923b499907934d7650a61, type: 2}
   choices: []
