@@ -1,7 +1,13 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-public enum rewardEnum {Leather, Steel, Wood};
+[Serializable]
+public struct DialogueReward
+{
+    public List<ResourceCost> resourcesToAward;
+    public Item itemToAward;
+}
 
 [CreateAssetMenu(menuName = "Dialog/Dialog")]
 public class Dialog : ScriptableObject
@@ -11,17 +17,7 @@ public class Dialog : ScriptableObject
     public Dialog nextDialog;
     public Dialog[] choices;
 
-    [SerializeField]
-    public Reward[] rewards;
+    public DialogueReward reward;
 
     public bool isClueGiven;
-}
-
-[Serializable]
-public class Reward
-{
-    public rewardEnum reward;
-    
-    [SerializeField]
-    public int quantity = 0;
 }

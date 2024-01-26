@@ -4,6 +4,9 @@ using UnityEngine;
 [System.Serializable]
 public class InventoryItem
 {
+    [SerializeField] private string itemName;
+    [SerializeField] private int attackDamage = 0;
+    [SerializeField] private int defense = 0;
     [SerializeField] private int weight;
     [SerializeField] private List<CharacterStat> gainedStats;
 
@@ -12,6 +15,17 @@ public class InventoryItem
     public InventoryItem(Item newItem)
     {
         gainedStats = new List<CharacterStat>();
+        itemName = newItem.Name;
+        weight = newItem.Weight;
+
+        if (newItem is Weapon)
+        {
+            attackDamage = Random.Range(newItem.MinAttackDamage, newItem.MaxAttackDamage + 1);
+        }
+        else
+        {
+            defense = Random.Range(newItem.MinDefense, newItem.MaxDefense + 1);
+        }
 
         foreach (RandomStat randomStat in newItem.OptionalRandomStats)
         {

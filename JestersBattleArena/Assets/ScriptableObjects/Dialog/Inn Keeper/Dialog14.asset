@@ -16,7 +16,10 @@ MonoBehaviour:
   character: {fileID: 11400000, guid: c95f3215eb741bb42aa62fc8c1ededdb, type: 2}
   nextDialog: {fileID: 11400000, guid: 52a4189cea1b99645bba80732f717572, type: 2}
   choices: []
-  rewards:
-  - reward: 0
-    quantity: 1
+  reward:
+    resourcesToAward:
+    - name: Leather
+      resource: 2
+      value: 200
+    itemToAward: {fileID: 11400000, guid: 609695387f6758f4ea8300b8d02e4159, type: 2}
   isClueGiven: 0

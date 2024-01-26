@@ -39,6 +39,16 @@ public class DialogDisplay : MonoBehaviour
         speakerName.text = dialog.character.characterName;
         speakerImage = dialog.character.image;
 
+        Player mainPlayer = FindObjectOfType<MainGameManager>().MainPlayer;
+        foreach (ResourceCost resourceReward in dialog.reward.resourcesToAward)
+        {
+            mainPlayer.AwardResourceToPlayer(resourceReward.resource, resourceReward.value);
+        }
+        if (dialog.reward.itemToAward != null)
+        {
+            mainPlayer.AddItemToPlayerInventory(dialog.reward.itemToAward);
+        }
+
         if(dialog.isClueGiven) {
             string randomColor = ClueManager.instance.addEmperorsColorClue();
             dialogText.text = dialogText.text.Replace("{insert color}", randomColor);

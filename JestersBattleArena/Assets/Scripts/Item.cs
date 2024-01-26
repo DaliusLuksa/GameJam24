@@ -42,4 +42,10 @@ public abstract class Item : ScriptableObject
     public List<RandomStat> OptionalRandomStats => optionalRandomStats;
     public Sprite Icon => icon;
     public List<ResourceCost> ResourcesToCraft => resourcesToCraft;
+    public int Weight => weight;
+    public int MinAttackDamage => minAttackDamage;
+    public int MaxAttackDamage => maxAttackDamage;
+    public int MinDefense => minDefense;
+    public int MaxDefense => maxDefense;
+    public string Name => name;
 }
