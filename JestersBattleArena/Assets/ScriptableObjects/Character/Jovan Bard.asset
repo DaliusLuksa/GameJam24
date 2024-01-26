@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Jovan Bard
   m_EditorClassIdentifier: 
   characterName: Jovan Bard
-  image: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 591c72a67a8ed2c4cb01f8a4ab008369, type: 3}
