@@ -10,6 +10,11 @@ public class InnImageController : MonoBehaviour, IPointerEnterHandler, IPointerE
         initialTransformScale = transform.localScale;
     }
 
+    private void OnDisable()
+    {
+        ResetInnHoverEffect();
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         townUI.OnInnImageClicked();
@@ -21,6 +26,11 @@ public class InnImageController : MonoBehaviour, IPointerEnterHandler, IPointerE
     }
 
     public void OnPointerExit(PointerEventData eventData)
+    {
+        ResetInnHoverEffect();
+    }
+
+    private void ResetInnHoverEffect()
     {
         transform.localScale = initialTransformScale;
     }

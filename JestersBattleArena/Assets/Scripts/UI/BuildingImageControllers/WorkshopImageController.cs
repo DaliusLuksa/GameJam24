@@ -11,6 +11,11 @@ public class WorkshopImageController : MonoBehaviour, IPointerEnterHandler, IPoi
         initialTransformScale = transform.localScale;
     }
 
+    private void OnDisable()
+    {
+        ResetWorkshopHoverEffect();
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         townUI.OnWorkshopImageClicked();
@@ -22,6 +27,11 @@ public class WorkshopImageController : MonoBehaviour, IPointerEnterHandler, IPoi
     }
 
     public void OnPointerExit(PointerEventData eventData)
+    {
+        ResetWorkshopHoverEffect();
+    }
+
+    private void ResetWorkshopHoverEffect()
     {
         transform.localScale = initialTransformScale;
     }
