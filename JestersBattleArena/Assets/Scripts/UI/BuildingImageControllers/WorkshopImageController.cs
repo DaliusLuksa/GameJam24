@@ -3,8 +3,14 @@ using UnityEngine.EventSystems;
 
 public class WorkshopImageController : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
-    [SerializeField]
     public TownUI townUI;
+
+    private Vector3 initialTransformScale;
+
+    private void Awake() {
+        initialTransformScale = transform.localScale;
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         townUI.OnWorkshopImageClicked();
@@ -12,11 +18,11 @@ public class WorkshopImageController : MonoBehaviour, IPointerEnterHandler, IPoi
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-       transform.localScale *= 1.1f;
+       transform.localScale = initialTransformScale * 1.1f;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        transform.localScale /= 1.1f;
+        transform.localScale = initialTransformScale;
     }
 }

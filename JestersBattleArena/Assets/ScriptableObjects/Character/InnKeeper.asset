@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: InnKeeper
   m_EditorClassIdentifier: 
   characterName: Inn keeper
+  sprite: {fileID: 21300000, guid: bdb9b1eab29ad2e458bf0c1b9dfabde1, type: 3}
