@@ -3,6 +3,8 @@ using UnityEngine;
 public class MainGameManager : MonoBehaviour
 {
     [SerializeField] private GameObject characterCreationUI;
+    [SerializeField] private GameObject workshopUI;
+    [SerializeField] private GameObject palaceUI;
     [SerializeField] private GameObject innUI;
     [SerializeField] private GameObject barracksUI;
     [SerializeField] private GameObject townUI;
@@ -22,6 +24,18 @@ public class MainGameManager : MonoBehaviour
         characterCreationUI.SetActive(false);
         barracksUI.SetActive(true);
     }
+    public void MoveToWorkshop()
+    {
+        workshopUI.SetActive(true);
+        townUI.SetActive(false);
+        barracksUI.SetActive(false);
+    }
+    public void MoveToPalace()
+    {
+        palaceUI.SetActive(true);
+        townUI.SetActive(false);
+        barracksUI.SetActive(false);
+    }
     public void MoveToInn()
     {
         innUI.SetActive(true);
@@ -37,6 +51,8 @@ public class MainGameManager : MonoBehaviour
 
     public void MoveToTown()
     {
+        workshopUI.SetActive(false);
+        palaceUI.SetActive(false);
         innUI.SetActive(false);
         townUI.SetActive(true);
         barracksUI.SetActive(false);

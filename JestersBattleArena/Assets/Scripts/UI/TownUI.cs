@@ -5,6 +5,14 @@ public class TownUI : MonoBehaviour
 {
     [SerializeField] private Button barracksButton;
 
+    public void OnWorkshopImageClicked() 
+    {
+        FindObjectOfType<MainGameManager>().MoveToWorkshop();
+    }
+    public void OnPalaceImageClicked()
+    {
+        FindObjectOfType<MainGameManager>().MoveToPalace();
+    }
     public void OnInnImageClicked()
     {
         FindObjectOfType<MainGameManager>().MoveToInn();
