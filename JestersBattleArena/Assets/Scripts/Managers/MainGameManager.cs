@@ -4,6 +4,7 @@ public class MainGameManager : MonoBehaviour
 {
     [SerializeField] private GameObject characterCreationUI;
     [SerializeField] private GameObject barracksUI;
+    [SerializeField] private GameObject townUI;
 
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private Player mainPlayer;
@@ -16,5 +17,17 @@ public class MainGameManager : MonoBehaviour
 
         characterCreationUI.SetActive(false);
         barracksUI.SetActive(true);
+    }
+
+    public void MoveToBarracks()
+    {
+        townUI.SetActive(false);
+        barracksUI.SetActive(true);
+    }
+
+    public void MoveToTown()
+    {
+        townUI.SetActive(true);
+        barracksUI.SetActive(false);
     }
 }
