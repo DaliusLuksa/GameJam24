@@ -18,11 +18,14 @@ MonoBehaviour:
   maxAttackDamage: 3
   minDefense: 0
   maxDefense: 0
+  weight: 1
+  resourcesToCraft: []
   optionalRandomStats:
-  - stat: 0
+  - name: Str
+    stat: 0
     minValue: 0
-    maxValue: 1
-    chanceToGive: 10
+    maxValue: 2
+    chanceToGive: 0.1
   weaponType: 0
   critRate: 0
   critDamage: 10
