@@ -5,6 +5,11 @@ public class TownUI : MonoBehaviour
 {
     [SerializeField] private Button barracksButton;
 
+    public void OnInnImageClicked()
+    {
+        FindObjectOfType<MainGameManager>().MoveToInn();
+    }
+
     private void Start()
     {
         barracksButton.onClick.AddListener(OnBarracksButtonClicked);

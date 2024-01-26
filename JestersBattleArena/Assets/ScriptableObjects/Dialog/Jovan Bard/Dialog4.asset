@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   line: {fileID: 11400000, guid: 3a7f6deb70f436d46bd3e449ca9f02d1, type: 2}
   character: {fileID: 11400000, guid: 9bfc938e03f26704fb33abd421c2f560, type: 2}
-  nextDialog: {fileID: 0}
+  nextDialog: {fileID: 11400000, guid: 467a7d160b5c96440a707a96478e7b4c, type: 2}
   choices: []
   rewards: []
   isClueGiven: 0

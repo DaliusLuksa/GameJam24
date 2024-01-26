@@ -3,6 +3,7 @@ using UnityEngine;
 public class MainGameManager : MonoBehaviour
 {
     [SerializeField] private GameObject characterCreationUI;
+    [SerializeField] private GameObject innUI;
     [SerializeField] private GameObject barracksUI;
     [SerializeField] private GameObject townUI;
     [SerializeField] private GameObject fightArenaUI;
@@ -19,15 +20,22 @@ public class MainGameManager : MonoBehaviour
         characterCreationUI.SetActive(false);
         barracksUI.SetActive(true);
     }
-
+    public void MoveToInn()
+    {
+        innUI.SetActive(true);
+        townUI.SetActive(false);
+        barracksUI.SetActive(false);
+    }
     public void MoveToBarracks()
     {
+        innUI.SetActive(false);
         townUI.SetActive(false);
         barracksUI.SetActive(true);
     }
 
     public void MoveToTown()
     {
+        innUI.SetActive(false);
         townUI.SetActive(true);
         barracksUI.SetActive(false);
     }

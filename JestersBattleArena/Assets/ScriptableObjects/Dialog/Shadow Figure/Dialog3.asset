@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dialog3
   m_EditorClassIdentifier: 
   line: {fileID: 11400000, guid: 883fd52480fd2e74ea00fdd286a057b7, type: 2}
-  character: {fileID: 11400000, guid: 9bfc938e03f26704fb33abd421c2f560, type: 2}
+  character: {fileID: 11400000, guid: e326c955d1069614db9672666e5f8a37, type: 2}
   nextDialog: {fileID: 11400000, guid: c76815bbd2f87684da2b070ef01fceb2, type: 2}
   choices: []
   rewards: []

@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf19ebe0f9c03b42b973c96c2501f33, type: 3}
   m_Name: LineChoices1choice4
   m_EditorClassIdentifier: 
-  text: As much as I'm enjoying our chat, I've got to attend to other matters. Until
-    our paths cross again, Seren.
+  text: As much as I'm enjoying our chat, I've got to attend to other matters.

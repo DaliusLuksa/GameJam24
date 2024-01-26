@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf19ebe0f9c03b42b973c96c2501f33, type: 3}
   m_Name: Line6
   m_EditorClassIdentifier: 
-  text: '"Ah, the emperor, a fascinating subject. Rumor has it he has a soft spot
-    for exotic pets and a peculiar aversion to the color {insert color}. A curious
-    ruler, indeed."'
+  text: Ah, the emperor, a fascinating subject. Rumor has it he has a soft spot for
+    exotic pets and a peculiar aversion to the color {insert color}. A curious ruler,
+    indeed.
