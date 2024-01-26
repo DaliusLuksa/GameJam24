@@ -5,6 +5,7 @@ public class MainGameManager : MonoBehaviour
     [SerializeField] private GameObject characterCreationUI;
     [SerializeField] private GameObject barracksUI;
     [SerializeField] private GameObject townUI;
+    [SerializeField] private GameObject fightArenaUI;
 
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private Player mainPlayer;
@@ -29,5 +30,11 @@ public class MainGameManager : MonoBehaviour
     {
         townUI.SetActive(true);
         barracksUI.SetActive(false);
+    }
+
+    public void StartFight()
+    {
+        barracksUI.SetActive(false);
+        fightArenaUI.SetActive(true);
     }
 }
