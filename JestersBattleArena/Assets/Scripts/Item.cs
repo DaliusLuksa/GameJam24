@@ -16,7 +16,7 @@ public struct RandomStat
     public Stat stat;
     public int minValue;
     public int maxValue;
-    public float chanceToGive;
+    [Range(0, 1)] public float chanceToGive;
 }
 
 [Serializable]
@@ -35,6 +35,9 @@ public abstract class Item : ScriptableObject
     [SerializeField] private int maxAttackDamage;
     [SerializeField] private int minDefense;
     [SerializeField] private int maxDefense;
+    [SerializeField] private int weight;
     [SerializeField] private List<ResourceCost> resourcesToCraft;
     [SerializeField] private List<RandomStat> optionalRandomStats;
+
+    public List<RandomStat> OptionalRandomStats => optionalRandomStats;
 }

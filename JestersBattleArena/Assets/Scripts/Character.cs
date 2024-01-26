@@ -28,4 +28,7 @@ public class Character : ScriptableObject
     [SerializeField] private new string name;
     [SerializeField] private Sprite icon;
     [SerializeField] private List<CharacterStat> characterStats;
+
+    public Sprite Icon => icon;
+    public List<CharacterStat> CharacterStats => characterStats;
 }
