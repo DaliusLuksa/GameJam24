@@ -11,6 +11,11 @@ public class PalaceImageController : MonoBehaviour, IPointerEnterHandler, IPoint
         initialTransformScale = transform.localScale;
     }
 
+    private void OnDisable()
+    {
+        ResetPalaceHoverEffect();
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         townUI.OnPalaceImageClicked();
@@ -22,6 +27,11 @@ public class PalaceImageController : MonoBehaviour, IPointerEnterHandler, IPoint
     }
 
     public void OnPointerExit(PointerEventData eventData)
+    {
+        ResetPalaceHoverEffect();
+    }
+
+    private void ResetPalaceHoverEffect()
     {
         transform.localScale = initialTransformScale;
     }
