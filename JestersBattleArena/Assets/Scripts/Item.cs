@@ -40,4 +40,6 @@ public abstract class Item : ScriptableObject
     [SerializeField] private List<RandomStat> optionalRandomStats;
 
     public List<RandomStat> OptionalRandomStats => optionalRandomStats;
+    public Sprite Icon => icon;
+    public List<ResourceCost> ResourcesToCraft => resourcesToCraft;
 }

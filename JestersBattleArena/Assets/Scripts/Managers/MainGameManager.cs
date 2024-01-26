@@ -11,6 +11,8 @@ public class MainGameManager : MonoBehaviour
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private Player mainPlayer;
 
+    public Player MainPlayer => mainPlayer;
+
     public void SetupPlayer(Character characterSO)
     {
         mainPlayer = Instantiate(playerPrefab).GetComponent<Player>();

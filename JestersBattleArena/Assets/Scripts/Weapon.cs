@@ -13,5 +13,5 @@ public class Weapon : Item
     [SerializeField] private WeaponType weaponType = WeaponType.Melee;
     [SerializeField] private int critRate;
     [SerializeField] private int critDamage;
-    [SerializeField] private int attackSpeed;
+    [SerializeField] [Min(0)] private float attackSpeed;
 }
