@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Shadow Figure 1
   m_EditorClassIdentifier: 
   characterName: Shadow figure
-  image: {fileID: 0}
+  sprite: {fileID: 21300000, guid: d7be1b8e904579243b4ac5b366e3d621, type: 3}
