@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 [System.Serializable]
 public class InventoryItem
@@ -10,10 +11,12 @@ public class InventoryItem
     [SerializeField] private int weight;
     [SerializeField] private List<CharacterStat> gainedStats;
 
+    public Item ItemSO { get; private set; } = null;
     public int Weight => weight;
 
     public InventoryItem(Item newItem)
     {
+        ItemSO = newItem;
         gainedStats = new List<CharacterStat>();
         itemName = newItem.Name;
         weight = newItem.Weight;
@@ -56,6 +59,7 @@ public class Player : MonoBehaviour
     [SerializeField] private int maxInventoryWeight = 30;
 
     public List<CharacterStat> CharacterStats { get; private set; }
+    public List<InventoryItem> PlayerInventory => playerInventory;
     public int GetResourceCount(Resource resource) { return playerResources[resource]; }
     public int CurrentInventoryWeight() 
     {

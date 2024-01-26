@@ -24,31 +24,46 @@ public class MainGameManager : MonoBehaviour
         characterCreationUI.SetActive(false);
         barracksUI.SetActive(true);
     }
+
+    /// <summary>
+    /// Player comes from Town ONLY
+    /// </summary>
     public void MoveToWorkshop()
     {
         workshopUI.SetActive(true);
         townUI.SetActive(false);
-        barracksUI.SetActive(false);
     }
+
+    /// <summary>
+    /// Player comes from Town ONLY
+    /// </summary>
     public void MoveToPalace()
     {
         palaceUI.SetActive(true);
         townUI.SetActive(false);
-        barracksUI.SetActive(false);
     }
+
+    /// <summary>
+    /// Player comes from Town ONLY
+    /// </summary>
     public void MoveToInn()
     {
         innUI.SetActive(true);
         townUI.SetActive(false);
-        barracksUI.SetActive(false);
     }
+
+    /// <summary>
+    /// Player comes from Town ONLY
+    /// </summary>
     public void MoveToBarracks()
     {
-        innUI.SetActive(false);
         townUI.SetActive(false);
         barracksUI.SetActive(true);
     }
 
+    /// <summary>
+    /// Player comes from multiple places...
+    /// </summary>
     public void MoveToTown()
     {
         workshopUI.SetActive(false);
