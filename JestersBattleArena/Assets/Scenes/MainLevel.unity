@@ -442,6 +442,13 @@ MonoBehaviour:
   startFightButton: {fileID: 809268703}
   contentRoot: {fileID: 891580182}
   storageItemSlotPrefab: {fileID: 8355976469633820010, guid: ed4bf30d3b13642418a75b8aa833cf00, type: 3}
+  characterStatsList:
+  - {fileID: 2025776346}
+  - {fileID: 571798268}
+  - {fileID: 802917407}
+  - {fileID: 1000174078}
+  - {fileID: 2045010580}
+  - {fileID: 1439371559}
 --- !u!1 &243278233
 GameObject:
   m_ObjectHideFlags: 0
