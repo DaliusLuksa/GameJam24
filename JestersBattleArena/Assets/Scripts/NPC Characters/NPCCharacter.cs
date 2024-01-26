@@ -5,5 +5,5 @@ using UnityEngine.UI;
 public class NPCCharacter : ScriptableObject
 {
     public string characterName;
-    public Image image;
+    public Sprite sprite;
 }

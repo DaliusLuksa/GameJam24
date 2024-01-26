@@ -37,7 +37,7 @@ public class DialogDisplay : MonoBehaviour
     void updateDialog(Dialog dialog) {
         dialogText.text = dialog.line.text;
         speakerName.text = dialog.character.characterName;
-        speakerImage = dialog.character.image;
+        speakerImage.sprite = dialog.character.sprite;
 
         Player mainPlayer = FindObjectOfType<MainGameManager>().MainPlayer;
         foreach (ResourceCost resourceReward in dialog.reward.resourcesToAward)

@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf19ebe0f9c03b42b973c96c2501f33, type: 3}
   m_Name: line3
   m_EditorClassIdentifier: 
-  text: 
+  text: You request a token to face formidable foe? A wise choice. Bring honor to
+    the empire, and may this token be a symbol of your dedication to our cause.
