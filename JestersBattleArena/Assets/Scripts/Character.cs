@@ -22,6 +22,13 @@ public struct CharacterStat
     public string name;
     public Stat charStat;
     public float value;
+
+    public CharacterStat(string name, Stat charStat, float value)
+    {
+        this.name = name;
+        this.charStat = charStat;
+        this.value = value;
+    }
 }
 
 [CreateAssetMenu(fileName = "New Character", menuName = "Character")]

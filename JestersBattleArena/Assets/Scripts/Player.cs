@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
     public void SetupPlayer(Character newCharacterSO)
     {
         characterSO = newCharacterSO;
-        CharacterStats = newCharacterSO.CharacterStats;
+        CharacterStats = newCharacterSO.CharacterStats.ConvertAll(stat => new CharacterStat(stat.name, stat.charStat, stat.value));
 
         playerInventory = new List<InventoryItem>();
         GiveDefaultResources();
@@ -92,6 +92,21 @@ public class Player : MonoBehaviour
     public void AddItemToPlayerInventory(Item newItem)
     {
         InventoryItem newInvItem = new InventoryItem(newItem);
+        // Only add item if the player has space
+        if (maxInventoryWeight >= CurrentInventoryWeight() + newInvItem.Weight)
+        {
+            playerInventory.Add(newInvItem);
+        }
+        else
+        {
+            // We shouldn't get here because at this point we will lose the item
+            Debug.Log("Failed to add item");
+        }
+    }
+
+    public void AddItemToPlayerInventory(InventoryItem newItem)
+    {
+        InventoryItem newInvItem = newItem;
         // Only add item if the player has space
         if (maxInventoryWeight >= CurrentInventoryWeight() + newInvItem.Weight)
         {
@@ -192,48 +207,88 @@ public class Player : MonoBehaviour
         InventoryItem oldItem = slotUI.SetupSlot(itemToEquip, slot);
         if (oldItem != null)
         {
-            // We had item already equipped there, we need to get it back to inv and remove new one (itemToEquip)
+            // Update player's stats after unequip
+            RemoveCharacterStatsWithNewItemEquip(oldItem);
+
+            // Add old item to the storage inv
+            AddItemToPlayerInventory(oldItem);
+
+            // Remove itemsToEquip from storage inv
+            RemoveItemFromPlayerInventory(itemToEquip);
+
+            // Update player's stats after equip
+            AddCharacterStatsWithNewItemEquip(itemToEquip);
+
+            // We need to update storage inventory now that we removed the item
+            FindObjectOfType<MainGameManager>().BarracksUI.OnStorageInvUpdated.Invoke();
         }
         else
         {
+            // Update player's stats
+            AddCharacterStatsWithNewItemEquip(itemToEquip);
+
             // No item was equipped, just remove equiping item from inv (itemToEquip)
             RemoveItemFromPlayerInventory(itemToEquip);
 
             // We need to update storage inventory now that we removed the item
             FindObjectOfType<MainGameManager>().BarracksUI.OnStorageInvUpdated.Invoke();
         }
+    }
 
-        //if (itemToEquip.ItemSO is Weapon)
-        //{
-        //    Weapon weaponItem = itemToEquip.ItemSO as Weapon;
-        //    if (weaponItem.WeaponType == WeaponType.Melee || weaponItem.WeaponType == WeaponType.Ranged)
-        //    {
-        //        InventoryItem oldItem = slotUI.SetupSlot(itemToEquip, slot);
-        //        if (oldItem != null)
-        //        {
-        //            // We had item already equipped there, we need to get it back to inv and remove new one (itemToEquip)
-        //        }
-        //        else
-        //        {
-        //            // No item was equipped, just remove equiping item from inv (itemToEquip)
-        //        }
-        //    }
-        //}
-        //else
-        //{
-        //    Armor armorItem = itemToEquip.ItemSO as Armor;
-        //    switch (armorItem.ArmorType)
-        //    {
-        //        case ArmorType.Helmet:
-        //            break;
-        //        case ArmorType.Chest:
-        //            break;
-        //        case ArmorType.Pants:
-        //            break;
-        //        case ArmorType.Boots:
-        //            break;
-        //    }
-        //}
+    private void AddCharacterStatsWithNewItemEquip(InventoryItem item)
+    {
+        for (int i = 0; i < CharacterStats.Count; i++)
+        {
+            if (CharacterStats[i].charStat == Stat.Def)
+            {
+                var tempStat = CharacterStats[i];
+                tempStat.value += item.Defense;
+                CharacterStats[i] = tempStat;
+                break;
+            }
+        }
+
+        foreach (CharacterStat stat in item.GainedStats)
+        {
+            for (int i = 0; i < CharacterStats.Count; i++)
+            {
+                if (CharacterStats[i].charStat == stat.charStat)
+                {
+                    var tempStat = CharacterStats[i];
+                    tempStat.value += stat.value;
+                    CharacterStats[i] = tempStat;
+                    break;
+                }
+            }
+        }
+    }
+
+    private void RemoveCharacterStatsWithNewItemEquip(InventoryItem item)
+    {
+        for (int i = 0; i < CharacterStats.Count; i++)
+        {
+            if (CharacterStats[i].charStat == Stat.Def)
+            {
+                var tempStat = CharacterStats[i];
+                tempStat.value -= item.Defense;
+                CharacterStats[i] = tempStat;
+                break;
+            }
+        }
+
+        foreach (CharacterStat stat in item.GainedStats)
+        {
+            for (int i = 0; i < CharacterStats.Count; i++)
+            {
+                if (CharacterStats[i].charStat == stat.charStat)
+                {
+                    var tempStat = CharacterStats[i];
+                    tempStat.value -= stat.value;
+                    CharacterStats[i] = tempStat;
+                    break;
+                }
+            }
+        }
     }
 
     public int GetAttackValue()
