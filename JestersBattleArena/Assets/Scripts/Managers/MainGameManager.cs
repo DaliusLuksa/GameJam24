@@ -22,6 +22,7 @@ public class MainGameManager : MonoBehaviour
     public Player MainPlayer => mainPlayer;
     public Player EnemyPlayer => enemeyPlayer;
     public BlueprintFrame CurrentlySelectedBP => currentlySelectedBP;
+    public BarracksUI BarracksUI => barracksUI.GetComponent<BarracksUI>();
 
     public void SetupPlayer(Character characterSO)
     {

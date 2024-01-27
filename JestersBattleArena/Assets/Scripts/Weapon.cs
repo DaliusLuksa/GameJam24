@@ -13,7 +13,7 @@ public class Weapon : Item
     public Weapon() {
         itemType = ItemType.Weapon;
     }
-    [SerializeField] public WeaponType weaponType = WeaponType.Melee;
+    [SerializeField] private WeaponType weaponType = WeaponType.Melee;
     [SerializeField] private int critRate;
     [SerializeField] private int critDamage;
     [SerializeField] [Min(0)] private float attackSpeed;
@@ -21,4 +21,5 @@ public class Weapon : Item
     public int CritRate => critRate;
     public int CritDamage => critDamage;
     public float AttackSpeed => attackSpeed;
+    public WeaponType WeaponType => weaponType;
 }

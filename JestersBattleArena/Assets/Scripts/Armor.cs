@@ -14,5 +14,7 @@ public class Armor : Item
     public Armor() {
         itemType = ItemType.Armor;
     }
-    public ArmorType armorType;
+    [SerializeField] private ArmorType armorType;
+
+    public ArmorType ArmorType => armorType;
 }

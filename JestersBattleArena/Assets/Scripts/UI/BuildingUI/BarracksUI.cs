@@ -1,16 +1,24 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class BarracksUI : MonoBehaviour
 {
+    public UnityEvent OnStorageInvUpdated { get; private set; } = new UnityEvent();
+
     [SerializeField] private Button townButton;
     [SerializeField] private Button startFightButton;
     [SerializeField] private GameObject contentRoot;
     [SerializeField] private StorageItemSlot storageItemSlotPrefab;
     [SerializeField] private List<TextMeshProUGUI> characterStatsList;
+    [SerializeField] private CharacterEquipmentSlotUI helmetSlot;
+    [SerializeField] private CharacterEquipmentSlotUI plateSlot;
+    [SerializeField] private CharacterEquipmentSlotUI pantsSlot;
+    [SerializeField] private CharacterEquipmentSlotUI bootsSlot;
+    [SerializeField] private CharacterEquipmentSlotUI mainHandSlot;
+    [SerializeField] private CharacterEquipmentSlotUI offHandSlot;
 
     private MainGameManager mainGameManager = null;
     // This shit is needed because OnEnable() runs first but we want to only update shit there after the initial load
@@ -18,6 +26,8 @@ public class BarracksUI : MonoBehaviour
 
     private void Start()
     {
+        OnStorageInvUpdated.AddListener(UpdateStorageUI);
+
         mainGameManager = FindObjectOfType<MainGameManager>();
 
         townButton.onClick.AddListener(OnTownButtonClicked);
@@ -39,8 +49,15 @@ public class BarracksUI : MonoBehaviour
 
     private void OnDestroy()
     {
+        OnStorageInvUpdated.RemoveListener(UpdateStorageUI);
         townButton.onClick.RemoveListener(OnTownButtonClicked);
         startFightButton.onClick.RemoveListener(OnStartFightButtonClicked);
+    }
+
+    private void UpdateStorageUI()
+    {
+        UpdatePlayerStorageInv();
+        UpdateCharacterStatsInfo();
     }
 
     private void OnTownButtonClicked()
@@ -73,5 +90,26 @@ public class BarracksUI : MonoBehaviour
         {
             characterStatsList[i].text = $"{mainGameManager.MainPlayer.CharacterStats[i].charStat} - {mainGameManager.MainPlayer.CharacterStats[i].value}";
         }
+    }
+
+    public CharacterEquipmentSlotUI GetCorrectEquipmentSlotUI(CharacterEquipmentSlot slot)
+    {
+        switch (slot)
+        {
+            case CharacterEquipmentSlot.Helmet:
+                return helmetSlot;
+            case CharacterEquipmentSlot.Plate:
+                return plateSlot;
+            case CharacterEquipmentSlot.Pants:
+                return pantsSlot;
+            case CharacterEquipmentSlot.Boots:
+                return bootsSlot;
+            case CharacterEquipmentSlot.MainHand:
+                return mainHandSlot;
+            case CharacterEquipmentSlot.OffHand:
+                return offHandSlot;
+        }
+
+        return null;
     }
 }

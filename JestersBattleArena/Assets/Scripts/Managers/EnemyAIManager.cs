@@ -68,11 +68,11 @@ public class EnemyAIManager : MonoBehaviour
         {
             if(item.itemType == ItemType.Weapon) {
                 Weapon weapon = (Weapon) item;
-                currentType = weapon.weaponType.ToString();
+                currentType = weapon.WeaponType.ToString();
             } 
             else {
                 Armor armor = (Armor) item;
-                currentType = armor.armorType.ToString();
+                currentType = armor.ArmorType.ToString();
             }
 
             if(currentWeight >= maxWeight || currentItems == maxItems) {

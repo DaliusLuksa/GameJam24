@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 [System.Serializable]
 public class InventoryItem
@@ -13,6 +15,9 @@ public class InventoryItem
     public Item ItemSO { get; private set; } = null;
     public int Weight => weight;
     public string ItemName => itemName;
+    public int AttackDamage => attackDamage;
+    public int Defense => defense;
+    public List<CharacterStat> GainedStats => gainedStats;
 
     public InventoryItem(Item newItem)
     {
@@ -99,6 +104,11 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void RemoveItemFromPlayerInventory(InventoryItem itemToRemove)
+    {
+        playerInventory.Remove(itemToRemove);
+    }
+
     private void GiveDefaultResources()
     {
         playerResources = new Dictionary<Resource, int>
@@ -175,6 +185,55 @@ public class Player : MonoBehaviour
         value -= value * enemyDefense / 100;
         HealthPoints -= value;
         return HealthPoints <= 0;
+    }
+
+    public void EquipItem(InventoryItem itemToEquip, CharacterEquipmentSlot slot, CharacterEquipmentSlotUI slotUI)
+    {
+        InventoryItem oldItem = slotUI.SetupSlot(itemToEquip, slot);
+        if (oldItem != null)
+        {
+            // We had item already equipped there, we need to get it back to inv and remove new one (itemToEquip)
+        }
+        else
+        {
+            // No item was equipped, just remove equiping item from inv (itemToEquip)
+            RemoveItemFromPlayerInventory(itemToEquip);
+
+            // We need to update storage inventory now that we removed the item
+            FindObjectOfType<MainGameManager>().BarracksUI.OnStorageInvUpdated.Invoke();
+        }
+
+        //if (itemToEquip.ItemSO is Weapon)
+        //{
+        //    Weapon weaponItem = itemToEquip.ItemSO as Weapon;
+        //    if (weaponItem.WeaponType == WeaponType.Melee || weaponItem.WeaponType == WeaponType.Ranged)
+        //    {
+        //        InventoryItem oldItem = slotUI.SetupSlot(itemToEquip, slot);
+        //        if (oldItem != null)
+        //        {
+        //            // We had item already equipped there, we need to get it back to inv and remove new one (itemToEquip)
+        //        }
+        //        else
+        //        {
+        //            // No item was equipped, just remove equiping item from inv (itemToEquip)
+        //        }
+        //    }
+        //}
+        //else
+        //{
+        //    Armor armorItem = itemToEquip.ItemSO as Armor;
+        //    switch (armorItem.ArmorType)
+        //    {
+        //        case ArmorType.Helmet:
+        //            break;
+        //        case ArmorType.Chest:
+        //            break;
+        //        case ArmorType.Pants:
+        //            break;
+        //        case ArmorType.Boots:
+        //            break;
+        //    }
+        //}
     }
 
     public int GetAttackValue()
