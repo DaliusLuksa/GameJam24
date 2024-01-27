@@ -10,24 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85339f579be48d34b91f90d081a749d3, type: 3}
-  m_Name: Shoes
+  m_Name: Greatsword
   m_EditorClassIdentifier: 
-  name: Shoes
-  icon: {fileID: 21300000, guid: af9475329b8c89444910fbee24239358, type: 3}
-  minAttackDamage: 0
-  maxAttackDamage: 4
+  name: Greatsword
+  icon: {fileID: 21300000, guid: 3a7ccc4474b7c394698559b3edc1b6d9, type: 3}
+  minAttackDamage: 5
+  maxAttackDamage: 9
   minDefense: 0
   maxDefense: 0
-  weight: 3
+  weight: 7
+  tier: 5
   resourcesToCraft:
   - name: Wood
     resource: 0
-    value: 2
+    value: 12
+  - name: Steel
+    resource: 1
+    value: 15
   - name: Leather
     resource: 2
-    value: 10
+    value: 12
   optionalRandomStats: []
-  weaponType: 1
-  critRate: 5
-  critDamage: 15
-  attackSpeed: 0.85
+  weaponType: 0
+  critRate: 0
+  critDamage: 50
+  attackSpeed: 0.7

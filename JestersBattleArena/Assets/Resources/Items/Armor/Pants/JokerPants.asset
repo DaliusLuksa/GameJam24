@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a40d05f8f8b092b4b88f12f468fa6000, type: 3}
   m_Name: JokerPants
   m_EditorClassIdentifier: 
-  name: 
+  name: Joker Pants
   icon: {fileID: 0}
   minAttackDamage: 0
   maxAttackDamage: 0
   minDefense: 0
   maxDefense: 0
   weight: 0
+  tier: 5
   resourcesToCraft: []
   optionalRandomStats: []
+  armorType: 2

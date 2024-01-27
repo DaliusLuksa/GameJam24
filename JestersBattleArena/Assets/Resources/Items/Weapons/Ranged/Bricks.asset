@@ -10,24 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85339f579be48d34b91f90d081a749d3, type: 3}
-  m_Name: LightPole
+  m_Name: Bricks
   m_EditorClassIdentifier: 
-  name: Light Pole
-  icon: {fileID: 21300000, guid: 5b9dcc2f72cc1d243bb4162f8a3264dd, type: 3}
-  minAttackDamage: 2
-  maxAttackDamage: 4
+  name: Bricks
+  icon: {fileID: 21300000, guid: 05d1418e786825e42862954e60cb1654, type: 3}
+  minAttackDamage: 5
+  maxAttackDamage: 8
   minDefense: 0
   maxDefense: 0
-  weight: 4
+  weight: 7
+  tier: 5
   resourcesToCraft:
   - name: Wood
     resource: 0
-    value: 4
+    value: 17
   - name: Steel
     resource: 1
-    value: 10
+    value: 17
   optionalRandomStats: []
-  weaponType: 0
+  weaponType: 1
   critRate: 0
   critDamage: 20
-  attackSpeed: 0.9
+  attackSpeed: 0.75

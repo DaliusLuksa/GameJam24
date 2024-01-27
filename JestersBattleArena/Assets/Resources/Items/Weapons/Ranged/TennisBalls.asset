@@ -10,27 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85339f579be48d34b91f90d081a749d3, type: 3}
-  m_Name: Katana
+  m_Name: TennisBalls
   m_EditorClassIdentifier: 
-  name: Katana
-  icon: {fileID: 21300000, guid: 891b78b4c2ac6df44b5779c46d6c50b2, type: 3}
-  minAttackDamage: 7
-  maxAttackDamage: 9
+  name: Tennis Balls
+  icon: {fileID: 21300000, guid: 2e64146ec28a4634db25d878c0a77cee, type: 3}
+  minAttackDamage: 2
+  maxAttackDamage: 4
   minDefense: 0
   maxDefense: 0
-  weight: 7
+  weight: 3
+  tier: 2
   resourcesToCraft:
-  - name: Wood
-    resource: 0
-    value: 7
-  - name: Steel
-    resource: 1
-    value: 20
   - name: Leather
     resource: 2
-    value: 9
+    value: 15
   optionalRandomStats: []
-  weaponType: 0
-  critRate: 30
-  critDamage: 0
-  attackSpeed: 1.2
+  weaponType: 1
+  critRate: 10
+  critDamage: 5
+  attackSpeed: 0.9

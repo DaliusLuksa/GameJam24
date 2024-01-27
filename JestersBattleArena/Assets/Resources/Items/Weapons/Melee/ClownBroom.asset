@@ -10,24 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85339f579be48d34b91f90d081a749d3, type: 3}
-  m_Name: Bucket
+  m_Name: ClownBroom
   m_EditorClassIdentifier: 
-  name: Bucket
-  icon: {fileID: 21300000, guid: 2b6fafeb97e8df9498674ff72cfaf59f, type: 3}
+  name: Clown Broom
+  icon: {fileID: 21300000, guid: 8778f78eec2086b4e9eed88cc51dccfc, type: 3}
   minAttackDamage: 1
-  maxAttackDamage: 5
+  maxAttackDamage: 1
   minDefense: 0
   maxDefense: 0
-  weight: 3
+  weight: 2
+  tier: 2
   resourcesToCraft:
   - name: Wood
     resource: 0
-    value: 3
+    value: 1
   - name: Steel
     resource: 1
-    value: 13
+    value: 1
+  - name: Leather
+    resource: 2
+    value: 9
   optionalRandomStats: []
   weaponType: 0
-  critRate: 15
-  critDamage: 20
-  attackSpeed: 1
+  critRate: 10
+  critDamage: 5
+  attackSpeed: 1.2

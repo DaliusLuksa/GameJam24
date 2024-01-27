@@ -19,6 +19,7 @@ MonoBehaviour:
   minDefense: 5
   maxDefense: 5
   weight: 2
+  tier: 2
   resourcesToCraft:
   - name: Wood
     resource: 0
@@ -40,3 +41,4 @@ MonoBehaviour:
     minValue: 1
     maxValue: 1
     chanceToGive: 1
+  armorType: 1

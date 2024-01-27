@@ -10,18 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85339f579be48d34b91f90d081a749d3, type: 3}
-  m_Name: StopSign
+  m_Name: LongBow
   m_EditorClassIdentifier: 
-  name: Stop Sign
-  icon: {fileID: 21300000, guid: 2000db64b447f9a45878feaf591e63ce, type: 3}
-  minAttackDamage: 3
+  name: Longbow
+  icon: {fileID: 21300000, guid: 89c848efc180059469f532bfc24a4873, type: 3}
+  minAttackDamage: 1
   maxAttackDamage: 6
   minDefense: 0
   maxDefense: 0
-  weight: 5
-  resourcesToCraft: []
+  weight: 3
+  tier: 3
+  resourcesToCraft:
+  - name: Wood
+    resource: 0
+    value: 16
+  - name: Steel
+    resource: 1
+    value: 5
+  - name: Leather
+    resource: 2
+    value: 5
   optionalRandomStats: []
-  weaponType: 0
-  critRate: 5
-  critDamage: 20
-  attackSpeed: 0.95
+  weaponType: 1
+  critRate: 10
+  critDamage: 7
+  attackSpeed: 0.9

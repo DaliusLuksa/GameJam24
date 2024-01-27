@@ -10,27 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85339f579be48d34b91f90d081a749d3, type: 3}
-  m_Name: Crossbow
+  m_Name: Umbrella
   m_EditorClassIdentifier: 
-  name: Crossbow
-  icon: {fileID: 21300000, guid: 67df88404578c794ebd2cb165198444b, type: 3}
-  minAttackDamage: 3
-  maxAttackDamage: 8
+  name: Umbrella
+  icon: {fileID: 21300000, guid: 9d3d524bc8f040341be1b19e9e875c1c, type: 3}
+  minAttackDamage: 1
+  maxAttackDamage: 3
   minDefense: 0
   maxDefense: 0
-  weight: 5
+  weight: 3
+  tier: 4
   resourcesToCraft:
   - name: Wood
     resource: 0
-    value: 20
+    value: 6
   - name: Steel
     resource: 1
-    value: 7
+    value: 6
   - name: Leather
     resource: 2
-    value: 7
+    value: 5
   optionalRandomStats: []
-  weaponType: 1
-  critRate: 15
+  weaponType: 0
+  critRate: 20
   critDamage: 10
-  attackSpeed: 1
+  attackSpeed: 1.1
