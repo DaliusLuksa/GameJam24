@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class BlueprintFrame : MonoBehaviour, IPointerClickHandler
+public class BlueprintFrame : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private Image blueprintSprite;
     [SerializeField] private TextMeshProUGUI blueprintResourceCostText;
 
     private MainGameManager mainGameManager = null;
+    private ItemInfoWindowUI itemInfoWindowUI = null;
     private Item item = null;
 
     public Item Item => item;
@@ -17,6 +18,7 @@ public class BlueprintFrame : MonoBehaviour, IPointerClickHandler
     private void Awake()
     {
         mainGameManager = FindObjectOfType<MainGameManager>();
+        itemInfoWindowUI = FindObjectOfType<ItemInfoWindowUI>();
     }
 
     public void SetupBlueprintFrame(Item item)
@@ -35,5 +37,17 @@ public class BlueprintFrame : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         mainGameManager.UpdateLatestSelectedWorkshopBP(this);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        itemInfoWindowUI.UpdateInfo(item);
+        itemInfoWindowUI.Root.SetActive(true);
+    }
+
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        itemInfoWindowUI.Root.SetActive(false);
     }
 }

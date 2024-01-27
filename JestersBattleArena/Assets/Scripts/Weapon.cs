@@ -17,4 +17,8 @@ public class Weapon : Item
     [SerializeField] private int critRate;
     [SerializeField] private int critDamage;
     [SerializeField] [Min(0)] private float attackSpeed;
+
+    public int CritRate => critRate;
+    public int CritDamage => critDamage;
+    public float AttackSpeed => attackSpeed;
 }
