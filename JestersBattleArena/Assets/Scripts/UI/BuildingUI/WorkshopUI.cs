@@ -83,9 +83,14 @@ public class WorkshopUI : MonoBehaviour
 
     public void UpdateWorksopBPsByDay(int currentDay)
     {
-        selectedWorkshopBPsForCurrentDay = new List<Item>();
+        if (mainGameManager == null)
+        {
+            mainGameManager = FindObjectOfType<MainGameManager>();
+        }
 
-        selectedWorkshopBPsForCurrentDay.AddRange(availableWorkshopBPs.FindAll(item => item.Tier == mainGameManager.EnemyAIManager.dayItemTierDistribution[System.Math.Min(currentDay, mainGameManager.EnemyAIManager.dayItemTierDistribution.Count)]));
+        selectedWorkshopBPsForCurrentDay = new List<Item>();
+        int currentTier = mainGameManager.EnemyAIManager.dayItemTierDistribution[System.Math.Min(currentDay, mainGameManager.EnemyAIManager.dayItemTierDistribution.Count)];
+        selectedWorkshopBPsForCurrentDay.AddRange(availableWorkshopBPs.FindAll(item => item.Tier == currentTier));
         // Shuffle the list
         for (int i = selectedWorkshopBPsForCurrentDay.Count - 1; i > 0; i--)
         {

@@ -148,14 +148,18 @@ public class FightArenaUI : MonoBehaviour
         playerInfoRoot.SetActive(false);
         enemyInfoRoot.SetActive(false);
 
+        int currentTier = mainGameManager.EnemyAIManager.dayItemTierDistribution[System.Math.Min(mainGameManager.DayManager.CurrentDay, mainGameManager.EnemyAIManager.dayItemTierDistribution.Count)];
         StringBuilder newString = new StringBuilder();
         if (playerWon)
         {
             endResultText.text = "Victory";
             foreach (ResourceCost resourceReward in victoryRewards.resourcesToAward)
             {
-                mainGameManager.MainPlayer.AwardResourceToPlayer(resourceReward.resource, resourceReward.value);
-                newString.AppendLine($"+{resourceReward.value} {resourceReward.resource}");
+                int additionalRandomLoot = Random.Range(currentTier, currentTier * currentTier);
+                int value = resourceReward.value;
+                value += value * currentTier / 100 + additionalRandomLoot;
+                mainGameManager.MainPlayer.AwardResourceToPlayer(resourceReward.resource, value);
+                newString.AppendLine($"+{value} {resourceReward.resource}");
             }
             if (victoryRewards.itemToAward != null)
             {
@@ -167,8 +171,11 @@ public class FightArenaUI : MonoBehaviour
             endResultText.text = "Defeat";
             foreach (ResourceCost resourceReward in defeatRewards.resourcesToAward)
             {
-                mainGameManager.MainPlayer.AwardResourceToPlayer(resourceReward.resource, resourceReward.value);
-                newString.AppendLine($"+{resourceReward.value} {resourceReward.resource}");
+                int additionalRandomLoot = Random.Range(currentTier, currentTier * currentTier);
+                int value = resourceReward.value;
+                value += value * currentTier / 100 + additionalRandomLoot;
+                mainGameManager.MainPlayer.AwardResourceToPlayer(resourceReward.resource, value);
+                newString.AppendLine($"+{value} {resourceReward.resource}");
             }
             if (defeatRewards.itemToAward != null)
             {
