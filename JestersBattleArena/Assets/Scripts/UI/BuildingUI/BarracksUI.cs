@@ -84,7 +84,7 @@ public class BarracksUI : MonoBehaviour
             newSlot.SetupStorageItemSlot(item);
         }
 
-        storageWeightText.text = $"Weight: {mainGameManager.MainPlayer.CurrentInventoryWeight().ToString()}";
+        storageWeightText.text = $"Weight: {mainGameManager.MainPlayer.CurrentInventoryWeight()}";
     }
 
     private void UpdateCharacterStatsInfo()

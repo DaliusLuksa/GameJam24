@@ -100,7 +100,7 @@ public class EnemyAIManager : MonoBehaviour
         return enemyInventory[randomIndex].ItemName;
     }
 
-    void ShuffleAllItems(Item[] Items) {
+    public void ShuffleAllItems(Item[] Items) {
         for (int i = Items.Length - 1; i > 0; i--) {
             int range = Random.Range(0, i);
             Item temp = Items[i];
@@ -108,5 +108,4 @@ public class EnemyAIManager : MonoBehaviour
             Items[range] = temp;
         }
     }
-
 }
