@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
 public class EnemyAIManager : MonoBehaviour
 {
     public static EnemyAIManager instance;
@@ -55,9 +54,9 @@ public class EnemyAIManager : MonoBehaviour
         Item[] allItems =  Resources.FindObjectsOfTypeAll(typeof(Item)) as Item[];
         ShuffleAllItems(allItems);
         
-        int maxItems = dayMaxItemDistribution[day];
-        int maxWeight = dayWeightDistribution[day];
-        int tier = dayItemTierDistribution[day];
+        int maxItems = dayMaxItemDistribution[System.Math.Min(day, dayMaxItemDistribution.Count)];
+        int maxWeight = dayWeightDistribution[System.Math.Min(day, dayWeightDistribution.Count)];
+        int tier = dayItemTierDistribution[System.Math.Min(day, dayItemTierDistribution.Count)];
         string[] availableItemTypes = {WeaponType.Melee.ToString(), WeaponType.Ranged.ToString(), ArmorType.Chest.ToString(), ArmorType.Helmet.ToString(), ArmorType.Pants.ToString(), ArmorType.Boots.ToString()};
 
         int currentItems = 0;

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 0
   name: Trickster Shirt
-  icon: {fileID: 21300000, guid: 591c72a67a8ed2c4cb01f8a4ab008369, type: 3}
+  icon: {fileID: 21300000, guid: af00a8c5948443a43a4ea83f900aa76b, type: 3}
   minAttackDamage: 0
   maxAttackDamage: 0
   minDefense: 2
