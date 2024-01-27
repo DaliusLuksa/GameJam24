@@ -1,4 +1,7 @@
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 public class BarracksUI : MonoBehaviour
@@ -7,6 +10,7 @@ public class BarracksUI : MonoBehaviour
     [SerializeField] private Button startFightButton;
     [SerializeField] private GameObject contentRoot;
     [SerializeField] private StorageItemSlot storageItemSlotPrefab;
+    [SerializeField] private List<TextMeshProUGUI> characterStatsList;
 
     private MainGameManager mainGameManager = null;
     // This shit is needed because OnEnable() runs first but we want to only update shit there after the initial load
@@ -20,6 +24,7 @@ public class BarracksUI : MonoBehaviour
         startFightButton.onClick.AddListener(OnStartFightButtonClicked);
 
         UpdatePlayerStorageInv();
+        UpdateCharacterStatsInfo();
         wasCreated = true;
     }
 
@@ -28,6 +33,7 @@ public class BarracksUI : MonoBehaviour
         if (wasCreated)
         {
             UpdatePlayerStorageInv();
+            UpdateCharacterStatsInfo();
         }
     }
 
@@ -58,6 +64,14 @@ public class BarracksUI : MonoBehaviour
         {
             StorageItemSlot newSlot = Instantiate(storageItemSlotPrefab, contentRoot.transform);
             newSlot.SetupStorageItemSlot(item);
+        }
+    }
+
+    private void UpdateCharacterStatsInfo()
+    {
+        for (int i = 0; i < characterStatsList.Count; i++)
+        {
+            characterStatsList[i].text = $"{mainGameManager.MainPlayer.CharacterStats[i].charStat} - {mainGameManager.MainPlayer.CharacterStats[i].value}";
         }
     }
 }

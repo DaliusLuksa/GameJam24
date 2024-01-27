@@ -26,4 +26,14 @@ MonoBehaviour:
   - name: Leather
     resource: 2
     value: 5
-  optionalRandomStats: []
+  optionalRandomStats:
+  - name: Str
+    stat: 0
+    minValue: 2
+    maxValue: 2
+    chanceToGive: 1
+  - name: Dex
+    stat: 2
+    minValue: 1
+    maxValue: 1
+    chanceToGive: 1

@@ -22,9 +22,12 @@ MonoBehaviour:
   resourcesToCraft:
   - name: Wood
     resource: 0
-    value: 8
+    value: 3
   - name: Steel
     resource: 1
+    value: 10
+  - name: Leather
+    resource: 2
     value: 2
   optionalRandomStats: []
   weaponType: 0
