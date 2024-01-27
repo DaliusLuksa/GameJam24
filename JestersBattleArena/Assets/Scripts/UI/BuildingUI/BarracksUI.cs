@@ -11,6 +11,7 @@ public class BarracksUI : MonoBehaviour
     [SerializeField] private Button townButton;
     [SerializeField] private Button startFightButton;
     [SerializeField] private GameObject contentRoot;
+    [SerializeField] private TextMeshProUGUI storageWeightText;
     [SerializeField] private StorageItemSlot storageItemSlotPrefab;
     [SerializeField] private List<TextMeshProUGUI> characterStatsList;
     [SerializeField] private CharacterEquipmentSlotUI helmetSlot;
@@ -82,6 +83,8 @@ public class BarracksUI : MonoBehaviour
             StorageItemSlot newSlot = Instantiate(storageItemSlotPrefab, contentRoot.transform);
             newSlot.SetupStorageItemSlot(item);
         }
+
+        storageWeightText.text = $"Weight: {mainGameManager.MainPlayer.CurrentInventoryWeight().ToString()}";
     }
 
     private void UpdateCharacterStatsInfo()
