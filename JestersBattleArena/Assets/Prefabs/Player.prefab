@@ -97,5 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfeb2c60a2054cd4d9e062706781684c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentInventoryWeight: 0
-  itemToAdd: {fileID: 11400000, guid: c70d9b68a5d9ef94b8ed08af76fc09dd, type: 2}
+  playerInventory: []
+  maxInventoryWeight: 30
+  itemToAdd: {fileID: 11400000, guid: 7dff2ead7ba36a04ba71e2a1069bf6a2, type: 2}

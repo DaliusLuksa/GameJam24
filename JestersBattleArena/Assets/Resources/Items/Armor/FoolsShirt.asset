@@ -10,30 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a40d05f8f8b092b4b88f12f468fa6000, type: 3}
-  m_Name: WoodenBreastplate
+  m_Name: FoolsShirt
   m_EditorClassIdentifier: 
-  name: Wooden Breastplate
-  icon: {fileID: 21300000, guid: 872b650a224347547809949ce8139cda, type: 3}
+  name: Fool's Shirt
+  icon: {fileID: 21300000, guid: 8728203848047c04b80ee3fff4253404, type: 3}
   minAttackDamage: 0
   maxAttackDamage: 0
-  minDefense: 4
-  maxDefense: 4
+  minDefense: 1
+  maxDefense: 1
   weight: 1
   resourcesToCraft:
   - name: Wood
     resource: 0
-    value: 10
+    value: 2
   - name: Leather
     resource: 2
-    value: 5
+    value: 1
   optionalRandomStats:
-  - name: Str
-    stat: 0
-    minValue: 2
-    maxValue: 2
-    chanceToGive: 1
-  - name: Dex
-    stat: 2
-    minValue: 1
-    maxValue: 1
+  - name: Fun
+    stat: 7
+    minValue: 5
+    maxValue: 5
     chanceToGive: 1

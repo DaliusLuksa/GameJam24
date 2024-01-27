@@ -10,30 +10,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a40d05f8f8b092b4b88f12f468fa6000, type: 3}
-  m_Name: WoodenBreastplate
+  m_Name: GoldBreastplate
   m_EditorClassIdentifier: 
-  name: Wooden Breastplate
-  icon: {fileID: 21300000, guid: 872b650a224347547809949ce8139cda, type: 3}
+  name: Gold Breastplate
+  icon: {fileID: 21300000, guid: 22c16254a080a4f43a9348de0b7cb5a5, type: 3}
   minAttackDamage: 0
   maxAttackDamage: 0
-  minDefense: 4
-  maxDefense: 4
-  weight: 1
+  minDefense: 7
+  maxDefense: 7
+  weight: 3
   resourcesToCraft:
   - name: Wood
     resource: 0
     value: 10
+  - name: Steel
+    resource: 1
+    value: 15
   - name: Leather
     resource: 2
-    value: 5
+    value: 10
   optionalRandomStats:
   - name: Str
     stat: 0
-    minValue: 2
-    maxValue: 2
+    minValue: 3
+    maxValue: 3
     chanceToGive: 1
   - name: Dex
     stat: 2
-    minValue: 1
-    maxValue: 1
+    minValue: 2
+    maxValue: 2
     chanceToGive: 1
