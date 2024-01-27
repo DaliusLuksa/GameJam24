@@ -163,8 +163,16 @@ public class Player : MonoBehaviour
     /// Deal damage to the player
     /// </summary>
     /// <returns>True if the player is dead</returns>
-    public bool DealDamage(int value, int enemyDefense)
+    public bool DealDamage(int value, int enemyDefense, int enemyCritR, int enemyCritDmg)
     {
+        // Check if we scored crit
+        if (Random.Range(0f, 1f) <= (float)enemyCritR / 100)
+        {
+            value += value * enemyCritDmg / 100;
+        }
+
+        // Remove some attack damage based on the defense
+        value -= value * enemyDefense / 100;
         HealthPoints -= value;
         return HealthPoints <= 0;
     }
@@ -206,5 +214,31 @@ public class Player : MonoBehaviour
         }
 
         return 0f;
+    }
+
+    public int GetCritRate()
+    {
+        foreach (CharacterStat stat in CharacterStats)
+        {
+            if (stat.charStat == Stat.CrtR)
+            {
+                return (int)stat.value;
+            }
+        }
+
+        return 0;
+    }
+
+    public int GetCritDamage()
+    {
+        foreach (CharacterStat stat in CharacterStats)
+        {
+            if (stat.charStat == Stat.CrtDmg)
+            {
+                return (int)stat.value;
+            }
+        }
+
+        return 0;
     }
 }
