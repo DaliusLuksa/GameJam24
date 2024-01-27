@@ -10,7 +10,10 @@ public enum WeaponType
 [CreateAssetMenu(fileName = "New Weapon Item", menuName = "Items/Weapon Item")]
 public class Weapon : Item
 {
-    [SerializeField] private WeaponType weaponType = WeaponType.Melee;
+    public Weapon() {
+        itemType = ItemType.Weapon;
+    }
+    [SerializeField] public WeaponType weaponType = WeaponType.Melee;
     [SerializeField] private int critRate;
     [SerializeField] private int critDamage;
     [SerializeField] [Min(0)] private float attackSpeed;

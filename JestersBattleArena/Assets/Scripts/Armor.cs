@@ -11,5 +11,8 @@ public enum ArmorType
 [CreateAssetMenu(fileName = "New Armor Item", menuName = "Items/Armor Item")]
 public class Armor : Item
 {
+    public Armor() {
+        itemType = ItemType.Armor;
+    }
     public ArmorType armorType;
 }

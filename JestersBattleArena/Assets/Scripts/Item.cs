@@ -9,6 +9,13 @@ public enum Resource
     Leather
 }
 
+public enum ItemType
+{
+    Armor,
+    Weapon,
+    None
+}
+
 [Serializable]
 public struct RandomStat
 {
@@ -29,6 +36,7 @@ public struct ResourceCost
 
 public abstract class Item : ScriptableObject
 {
+    public ItemType itemType = ItemType.None;
     [SerializeField] private new string name;
     [SerializeField] private Sprite icon;
     [SerializeField] private int minAttackDamage;

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemyAIManager : MonoBehaviour
@@ -49,21 +50,36 @@ public class EnemyAIManager : MonoBehaviour
         
         int maxItems = dayMaxItemDistribution[day];
         int maxWeight = dayWeightDistribution[day];
-        // int maxTier = dayItemTierDistribution[day]; <- TODO add this when we will implement tiers on items
+        int tier = dayItemTierDistribution[day];
+        string[] availableItemTypes = {WeaponType.Melee.ToString(), WeaponType.Ranged.ToString(), ArmorType.Chest.ToString(), ArmorType.Helmet.ToString(), ArmorType.Pants.ToString(), ArmorType.Boots.ToString()};
 
         int currentItems = 0;
         int currentWeight = 0;
+        string currentType = "";
 
-        // TODO make it a bit more logical so enemy would get two weapons, same armor pieces
         foreach (Item item in allItems)
         {
-            if(currentItems == maxItems) {
+            if(item.itemType == ItemType.Weapon) {
+                Weapon weapon = (Weapon) item;
+                currentType = weapon.weaponType.ToString();
+            } 
+            else {
+                Armor armor = (Armor) item;
+                currentType = armor.armorType.ToString();
+            }
+
+            if(availableItemTypes.All(x => x != currentType)) {
                 break;
             }
-            if(currentWeight >= maxWeight) {
+            if(currentWeight >= maxWeight || currentItems == maxItems) {
                 break;
             }
 
+            if(item.Tier != tier) {
+                continue;
+            }
+        
+            availableItemTypes = availableItemTypes.Where(x => x != currentType).ToArray();
             InventoryItem newInvItem = new InventoryItem(item);
             enemyInventory.Add(newInvItem);
             currentWeight += item.Weight;
