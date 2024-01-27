@@ -36,12 +36,15 @@ public abstract class Item : ScriptableObject
     [SerializeField] private int minDefense;
     [SerializeField] private int maxDefense;
     [SerializeField] private int weight;
+    [SerializeField] private int tier;
+
     [SerializeField] private List<ResourceCost> resourcesToCraft;
     [SerializeField] private List<RandomStat> optionalRandomStats;
 
     public List<RandomStat> OptionalRandomStats => optionalRandomStats;
     public Sprite Icon => icon;
     public List<ResourceCost> ResourcesToCraft => resourcesToCraft;
+    public int Tier => tier;
     public int Weight => weight;
     public int MinAttackDamage => minAttackDamage;
     public int MaxAttackDamage => maxAttackDamage;

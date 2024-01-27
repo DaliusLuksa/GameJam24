@@ -3,7 +3,7 @@ using UnityEngine;
 public enum ArmorType
 {
     Helmet,
-    Plate,
+    Chest,
     Pants,
     Boots
 }
@@ -11,4 +11,5 @@ public enum ArmorType
 [CreateAssetMenu(fileName = "New Armor Item", menuName = "Items/Armor Item")]
 public class Armor : Item
 {
+    public ArmorType armorType;
 }
