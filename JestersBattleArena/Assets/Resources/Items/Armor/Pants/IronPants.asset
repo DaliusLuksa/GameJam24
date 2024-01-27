@@ -19,7 +19,7 @@ MonoBehaviour:
   maxAttackDamage: 0
   minDefense: 6
   maxDefense: 6
-  weight: 0
+  weight: 2
   tier: 2
   resourcesToCraft:
   - name: Wood
