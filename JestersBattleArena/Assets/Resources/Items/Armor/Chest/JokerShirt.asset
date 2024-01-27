@@ -17,10 +17,21 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 6df0f6479e7be384bb06825a5adf3b5d, type: 3}
   minAttackDamage: 0
   maxAttackDamage: 0
-  minDefense: 0
-  maxDefense: 0
+  minDefense: 5
+  maxDefense: 5
   weight: 0
   tier: 5
-  resourcesToCraft: []
-  optionalRandomStats: []
+  resourcesToCraft:
+  - name: Wood
+    resource: 0
+    value: 6
+  - name: Leather
+    resource: 2
+    value: 5
+  optionalRandomStats:
+  - name: Dex
+    stat: 2
+    minValue: 5
+    maxValue: 5
+    chanceToGive: 1
   armorType: 1
