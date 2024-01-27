@@ -7,6 +7,9 @@ public class HappinessManager : MonoBehaviour
     public GameObject maximumHappinessBar;
     public GameObject currentHappinessBar;
 
+    void Start() {
+        UpdateHappiness(currentHappiness);
+    }
     public void UpdateHappiness(int newHappiness)
     {
         currentHappiness = newHappiness;

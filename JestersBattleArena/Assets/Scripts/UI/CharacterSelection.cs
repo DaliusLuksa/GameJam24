@@ -8,6 +8,7 @@ public class CharacterSelection : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private CharacterCreationUI characterCreationUI;
     [SerializeField] private Character characterSO;
+    [SerializeField] private GameObject characterPreview;
     [SerializeField] private Image characterPreviewImage;
     [SerializeField] private List<TextMeshProUGUI> characterStatsList;
 
@@ -16,7 +17,7 @@ public class CharacterSelection : MonoBehaviour, IPointerClickHandler
         characterCreationUI.UpdateCurrentlySelectedCharacter(characterSO);
 
         characterPreviewImage.sprite = characterSO.Icon;
-        characterPreviewImage.gameObject.SetActive(true);
+        characterPreview.gameObject.SetActive(true);
 
         for (int i = 0; i < characterStatsList.Count; i++)
         {
