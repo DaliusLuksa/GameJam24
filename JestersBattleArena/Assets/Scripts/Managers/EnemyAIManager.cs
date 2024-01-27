@@ -14,6 +14,9 @@ public class EnemyAIManager : MonoBehaviour
         {3, 15},
         {4, 20},
         {5, 25},
+        {6, 30},
+        {7, 30},
+        {8, 30},
     };
     public IDictionary<int, int> dayMaxItemDistribution = new Dictionary<int, int>(){
         {1, 2},
@@ -21,13 +24,16 @@ public class EnemyAIManager : MonoBehaviour
         {3, 6},
         {4, 6},
         {5, 6},
+        {6, 6},
+        {7, 6},
+        {8, 6},
     };
     public IDictionary<int, int> dayItemTierDistribution = new Dictionary<int, int>(){
         {1, 1},
-        {2, 1},
-        {3, 2},
-        {4, 2},
-        {5, 2},
+        {2, 2},
+        {3, 3},
+        {4, 4},
+        {5, 5},
     };
 
     void Awake()
@@ -57,7 +63,7 @@ public class EnemyAIManager : MonoBehaviour
         int currentItems = 0;
         int currentWeight = 0;
         string currentType = "";
-
+        
         foreach (Item item in allItems)
         {
             if(item.itemType == ItemType.Weapon) {
@@ -69,14 +75,14 @@ public class EnemyAIManager : MonoBehaviour
                 currentType = armor.armorType.ToString();
             }
 
-            if(availableItemTypes.All(x => x != currentType)) {
-                break;
-            }
             if(currentWeight >= maxWeight || currentItems == maxItems) {
                 break;
             }
 
             if(item.Tier != tier) {
+                continue;
+            }
+            if(availableItemTypes.All(x => x != currentType)) {
                 continue;
             }
         

@@ -177,6 +177,9 @@ public class FightArenaUI : MonoBehaviour
         }
 
         gainedLootText.text = newString.ToString();
+
+        FindObjectOfType<DayManager>().nextDay();
+        
         endFightWindowRoot.SetActive(true);
     }
 }

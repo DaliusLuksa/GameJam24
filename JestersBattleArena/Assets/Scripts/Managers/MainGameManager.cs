@@ -36,7 +36,7 @@ public class MainGameManager : MonoBehaviour
         characterCreationUI.SetActive(false);
         barracksUI.SetActive(true);
 
-        EnemyAIManager.instance.AddItemsBasedOnDay(1);
+        EnemyAIManager.instance.AddItemsBasedOnDay(FindObjectOfType<DayManager>().currentDay);
     }
 
     /// <summary>
