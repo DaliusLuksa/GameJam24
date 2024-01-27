@@ -13,6 +13,9 @@ public class InventoryItem
     public Item ItemSO { get; private set; } = null;
     public int Weight => weight;
     public string ItemName => itemName;
+    public int AttackDamage => attackDamage;
+    public int Defense => defense;
+    public List<CharacterStat> GainedStats => gainedStats;
 
     public InventoryItem(Item newItem)
     {
