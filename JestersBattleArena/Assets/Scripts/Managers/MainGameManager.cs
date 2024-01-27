@@ -13,7 +13,10 @@ public class MainGameManager : MonoBehaviour
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private Player mainPlayer;
 
+    private BlueprintFrame currentlySelectedBP = null;
+
     public Player MainPlayer => mainPlayer;
+    public BlueprintFrame CurrentlySelectedBP => currentlySelectedBP;
 
     public void SetupPlayer(Character characterSO)
     {
@@ -23,6 +26,7 @@ public class MainGameManager : MonoBehaviour
 
         characterCreationUI.SetActive(false);
         barracksUI.SetActive(true);
+
         EnemyAIManager.instance.AddItemsBasedOnDay(1);
     }
 
@@ -78,5 +82,10 @@ public class MainGameManager : MonoBehaviour
     {
         barracksUI.SetActive(false);
         fightArenaUI.SetActive(true);
+    }
+
+    public void UpdateLatestSelectedWorkshopBP(BlueprintFrame selectedBP)
+    {
+        currentlySelectedBP = selectedBP;
     }
 }

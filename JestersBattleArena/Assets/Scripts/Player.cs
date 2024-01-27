@@ -116,4 +116,25 @@ public class Player : MonoBehaviour
         value = Mathf.Clamp(value, 0, 999);
         playerResources[resource] += value;
     }
+
+    public bool IsEnoughToCraft(Item itemToCraft)
+    {
+        foreach (ResourceCost resource in itemToCraft.ResourcesToCraft)
+        {
+            if (playerResources[resource.resource] < resource.value)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public void RemoveResourcesFromPlayer(List<ResourceCost> resourcesToRemove)
+    {
+        foreach (ResourceCost resource in resourcesToRemove)
+        {
+            playerResources[resource.resource] -= resource.value;
+        }
+    }
 }
