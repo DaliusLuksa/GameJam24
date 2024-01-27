@@ -102,7 +102,11 @@ public class FightArenaUI : MonoBehaviour
         if (currentPlayerAttackCDTime >= playerMaxTime)
         {
             // Deal damage and go on cd
-            if (mainGameManager.EnemyPlayer.DealDamage(mainGameManager.MainPlayer.GetAttackValue(), mainGameManager.EnemyPlayer.GetDefenseValue()))
+            if (mainGameManager.EnemyPlayer.DealDamage(
+                mainGameManager.MainPlayer.GetAttackValue(), 
+                mainGameManager.EnemyPlayer.GetDefenseValue(),
+                mainGameManager.MainPlayer.GetCritRate(),
+                mainGameManager.MainPlayer.GetCritDamage()))
             {
                 // Enemy died
                 isFightActive = false;
@@ -117,7 +121,11 @@ public class FightArenaUI : MonoBehaviour
         if (currentEnemyAttackCDTime >= enemyMaxTime)
         {
             // Deal damage and go on cd
-            if (mainGameManager.MainPlayer.DealDamage(mainGameManager.EnemyPlayer.GetAttackValue(), mainGameManager.MainPlayer.GetDefenseValue()))
+            if (mainGameManager.MainPlayer.DealDamage(
+                mainGameManager.EnemyPlayer.GetAttackValue(), 
+                mainGameManager.MainPlayer.GetDefenseValue(),
+                mainGameManager.EnemyPlayer.GetCritRate(),
+                mainGameManager.EnemyPlayer.GetCritDamage()))
             {
                 // Player died
                 isFightActive = false;
