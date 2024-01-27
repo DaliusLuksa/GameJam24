@@ -235,7 +235,14 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void AddCharacterStatsWithNewItemEquip(InventoryItem item)
+    public void ClearEquipmentAndInventory(){
+        foreach(var item in playerInventory){
+            RemoveCharacterStatsWithNewItemEquip(item);
+        }
+        playerInventory.Clear();
+    }
+
+    public void AddCharacterStatsWithNewItemEquip(InventoryItem item)
     {
         for (int i = 0; i < CharacterStats.Count; i++)
         {
