@@ -501,6 +501,12 @@ MonoBehaviour:
   - {fileID: 1000174078}
   - {fileID: 2045010580}
   - {fileID: 1439371559}
+  helmetSlot: {fileID: 708108805}
+  plateSlot: {fileID: 1678460838}
+  pantsSlot: {fileID: 450360498}
+  bootsSlot: {fileID: 1369812820}
+  mainHandSlot: {fileID: 1580341358}
+  offHandSlot: {fileID: 1538568904}
 --- !u!1 &243278233
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,6 +1207,7 @@ GameObject:
   - component: {fileID: 450360495}
   - component: {fileID: 450360497}
   - component: {fileID: 450360496}
+  - component: {fileID: 450360498}
   m_Layer: 5
   m_Name: PantsSlot
   m_TagString: Untagged
@@ -1266,6 +1273,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450360494}
   m_CullTransparentMesh: 1
+--- !u!114 &450360498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450360494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fab7fcf8ac15184480ff833156e34f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helmetSlot: {fileID: 0}
+  plateSlot: {fileID: 0}
+  pantsSlot: {fileID: 450360496}
+  bootsSlot: {fileID: 0}
+  mainHandSlot: {fileID: 0}
+  offHandSlot: {fileID: 0}
 --- !u!1 &463787927
 GameObject:
   m_ObjectHideFlags: 0
@@ -2614,6 +2639,7 @@ GameObject:
   - component: {fileID: 708108802}
   - component: {fileID: 708108804}
   - component: {fileID: 708108803}
+  - component: {fileID: 708108805}
   m_Layer: 5
   m_Name: HelmetSlot
   m_TagString: Untagged
@@ -2679,6 +2705,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708108801}
   m_CullTransparentMesh: 1
+--- !u!114 &708108805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708108801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fab7fcf8ac15184480ff833156e34f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helmetSlot: {fileID: 708108803}
+  plateSlot: {fileID: 0}
+  pantsSlot: {fileID: 0}
+  bootsSlot: {fileID: 0}
+  mainHandSlot: {fileID: 0}
+  offHandSlot: {fileID: 0}
 --- !u!1 &713640967
 GameObject:
   m_ObjectHideFlags: 0
@@ -6036,6 +6080,7 @@ GameObject:
   - component: {fileID: 1369812817}
   - component: {fileID: 1369812819}
   - component: {fileID: 1369812818}
+  - component: {fileID: 1369812820}
   m_Layer: 5
   m_Name: BootsSlot
   m_TagString: Untagged
@@ -6101,6 +6146,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369812816}
   m_CullTransparentMesh: 1
+--- !u!114 &1369812820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369812816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fab7fcf8ac15184480ff833156e34f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helmetSlot: {fileID: 0}
+  plateSlot: {fileID: 0}
+  pantsSlot: {fileID: 0}
+  bootsSlot: {fileID: 1369812818}
+  mainHandSlot: {fileID: 0}
+  offHandSlot: {fileID: 0}
 --- !u!1 &1378180428
 GameObject:
   m_ObjectHideFlags: 0
@@ -6986,6 +7049,7 @@ GameObject:
   - component: {fileID: 1538568901}
   - component: {fileID: 1538568903}
   - component: {fileID: 1538568902}
+  - component: {fileID: 1538568904}
   m_Layer: 5
   m_Name: OffHandSlot
   m_TagString: Untagged
@@ -7051,6 +7115,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1538568900}
   m_CullTransparentMesh: 1
+--- !u!114 &1538568904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538568900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fab7fcf8ac15184480ff833156e34f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helmetSlot: {fileID: 0}
+  plateSlot: {fileID: 0}
+  pantsSlot: {fileID: 0}
+  bootsSlot: {fileID: 0}
+  mainHandSlot: {fileID: 0}
+  offHandSlot: {fileID: 1538568902}
 --- !u!224 &1546257863 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4768939650170597704, guid: 35fc1b0b07127ee4daa1129b03236455, type: 3}
@@ -7067,6 +7149,7 @@ GameObject:
   - component: {fileID: 1580341355}
   - component: {fileID: 1580341357}
   - component: {fileID: 1580341356}
+  - component: {fileID: 1580341358}
   m_Layer: 5
   m_Name: MainHandSlot
   m_TagString: Untagged
@@ -7132,6 +7215,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580341354}
   m_CullTransparentMesh: 1
+--- !u!114 &1580341358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580341354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fab7fcf8ac15184480ff833156e34f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helmetSlot: {fileID: 0}
+  plateSlot: {fileID: 0}
+  pantsSlot: {fileID: 0}
+  bootsSlot: {fileID: 0}
+  mainHandSlot: {fileID: 1580341356}
+  offHandSlot: {fileID: 0}
 --- !u!1 &1622994291
 GameObject:
   m_ObjectHideFlags: 0
@@ -7538,6 +7639,7 @@ GameObject:
   - component: {fileID: 1678460835}
   - component: {fileID: 1678460837}
   - component: {fileID: 1678460836}
+  - component: {fileID: 1678460838}
   m_Layer: 5
   m_Name: PlateSlot
   m_TagString: Untagged
@@ -7603,6 +7705,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1678460834}
   m_CullTransparentMesh: 1
+--- !u!114 &1678460838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678460834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fab7fcf8ac15184480ff833156e34f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helmetSlot: {fileID: 0}
+  plateSlot: {fileID: 1678460836}
+  pantsSlot: {fileID: 0}
+  bootsSlot: {fileID: 0}
+  mainHandSlot: {fileID: 0}
+  offHandSlot: {fileID: 0}
 --- !u!1 &1711502590
 GameObject:
   m_ObjectHideFlags: 0
