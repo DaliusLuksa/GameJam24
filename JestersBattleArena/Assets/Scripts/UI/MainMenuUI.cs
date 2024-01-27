@@ -8,14 +8,6 @@ public class MainMenuUI : MonoBehaviour
     {
         FindObjectOfType<MainGameManager>().MoveToCharacterCreation();
     }
-    public void OnSettingsClicked()
-    {
-        FindObjectOfType<MainGameManager>().MoveToPalace();
-    }
-    public void OnCreditsClicked()
-    {
-        FindObjectOfType<MainGameManager>().MoveToInn();
-    }
     public void OnExitGameClicked()
     {
         Application.Quit();
