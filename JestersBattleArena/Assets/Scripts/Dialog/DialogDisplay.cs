@@ -44,7 +44,7 @@ public class DialogDisplay : MonoBehaviour
         speakerName.text = dialog.character.characterName;
         speakerImage.sprite = dialog.character.sprite;
         DialogManager.instance.interactionNumber -= dialog.interactionCost;
-        InteractionCount.text = DialogManager.instance.maxInteractionNumber.ToString()+"/"+DialogManager.instance.interactionNumber.ToString();
+        InteractionCount.text = DialogManager.instance.interactionNumber.ToString()+"/"+DialogManager.instance.maxInteractionNumber.ToString();
 
         Player mainPlayer = FindObjectOfType<MainGameManager>().MainPlayer;
         foreach (ResourceCost resourceReward in dialog.reward.resourcesToAward)
