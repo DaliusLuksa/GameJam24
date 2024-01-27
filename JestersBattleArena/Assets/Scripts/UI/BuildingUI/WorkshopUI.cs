@@ -12,6 +12,7 @@ public class WorkshopUI : MonoBehaviour
 
     private MainGameManager mainGameManager = null;
     private bool wasCreated = false;
+    private List<Item> selectedWorkshopBPsForCurrentDay;
 
     private void Start()
     {
@@ -20,6 +21,7 @@ public class WorkshopUI : MonoBehaviour
         townButton.onClick.AddListener(OnWorkshopButtonClicked);
         craftButton.onClick.AddListener(OnCraftButtonClicked);
 
+        UpdateWorksopBPsByDay(mainGameManager.DayManager.CurrentDay);
         UpdateCraftingInventory();
         wasCreated = true;
     }
@@ -50,10 +52,17 @@ public class WorkshopUI : MonoBehaviour
             Destroy(rootContent.transform.GetChild(i).gameObject);
         }
 
-        foreach (Item bp in availableWorkshopBPs)
+        int count = 0;
+        int maxCount = 7;
+        foreach (Item bp in selectedWorkshopBPsForCurrentDay)
         {
             BlueprintFrame newBP = Instantiate(blueprintFramePrefab, rootContent.transform);
             newBP.SetupBlueprintFrame(bp);
+            count++;
+            if (count > maxCount)
+            {
+                break;
+            }
         }
     }
 
@@ -69,6 +78,21 @@ public class WorkshopUI : MonoBehaviour
         else
         {
             Debug.Log("Not enough materials to craft an item");
+        }
+    }
+
+    public void UpdateWorksopBPsByDay(int currentDay)
+    {
+        selectedWorkshopBPsForCurrentDay = new List<Item>();
+
+        selectedWorkshopBPsForCurrentDay.AddRange(availableWorkshopBPs.FindAll(item => item.Tier == mainGameManager.EnemyAIManager.dayItemTierDistribution[System.Math.Min(currentDay, mainGameManager.EnemyAIManager.dayItemTierDistribution.Count)]));
+        // Shuffle the list
+        for (int i = selectedWorkshopBPsForCurrentDay.Count - 1; i > 0; i--)
+        {
+            int range = Random.Range(0, i);
+            var temp = selectedWorkshopBPsForCurrentDay[i];
+            selectedWorkshopBPsForCurrentDay[i] = selectedWorkshopBPsForCurrentDay[range];
+            selectedWorkshopBPsForCurrentDay[range] = temp;
         }
     }
 }

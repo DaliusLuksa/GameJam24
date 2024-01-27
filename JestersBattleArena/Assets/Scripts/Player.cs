@@ -244,6 +244,26 @@ public class Player : MonoBehaviour
 
     public void AddCharacterStatsWithNewItemEquip(InventoryItem item)
     {
+        if (item.ItemSO is Weapon)
+        {
+            for (int i = 0; i < CharacterStats.Count; i++)
+            {
+                if (CharacterStats[i].charStat == Stat.AttackSpeed)
+                {
+                    var tempStat = CharacterStats[i];
+                    tempStat.value = (item.ItemSO as Weapon).AttackSpeed;
+                    CharacterStats[i] = tempStat;
+                }
+
+                if (CharacterStats[i].charStat == Stat.Attack)
+                {
+                    var tempStat = CharacterStats[i];
+                    tempStat.value += item.AttackDamage;
+                    CharacterStats[i] = tempStat;
+                }
+            }
+        }
+
         for (int i = 0; i < CharacterStats.Count; i++)
         {
             if (CharacterStats[i].charStat == Stat.Def)
@@ -272,6 +292,27 @@ public class Player : MonoBehaviour
 
     private void RemoveCharacterStatsWithNewItemEquip(InventoryItem item)
     {
+        if (item.ItemSO is Weapon)
+        {
+            for (int i = 0; i < CharacterStats.Count; i++)
+            {
+                if (CharacterStats[i].charStat == Stat.AttackSpeed)
+                {
+                    var tempStat = CharacterStats[i];
+                    // Yup
+                    tempStat.value = 0.5f;
+                    CharacterStats[i] = tempStat;
+                }
+
+                if (CharacterStats[i].charStat == Stat.Attack)
+                {
+                    var tempStat = CharacterStats[i];
+                    tempStat.value -= item.AttackDamage;
+                    CharacterStats[i] = tempStat;
+                }
+            }
+        }
+
         for (int i = 0; i < CharacterStats.Count; i++)
         {
             if (CharacterStats[i].charStat == Stat.Def)

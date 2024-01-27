@@ -539,7 +539,7 @@ GameObject:
   - component: {fileID: 7361521385903118546}
   - component: {fileID: 7361521385903118557}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: StorageWeightText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1402,6 +1402,7 @@ MonoBehaviour:
   townButton: {fileID: 7361521387764718253}
   startFightButton: {fileID: 7361521386030654149}
   contentRoot: {fileID: 7361521385980852236}
+  storageWeightText: {fileID: 7361521385903118557}
   storageItemSlotPrefab: {fileID: 8355976469633820010, guid: ed4bf30d3b13642418a75b8aa833cf00, type: 3}
   characterStatsList:
   - {fileID: 7361521387230393280}

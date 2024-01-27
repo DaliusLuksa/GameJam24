@@ -23,6 +23,9 @@ public class MainGameManager : MonoBehaviour
     public Player EnemyPlayer => enemeyPlayer;
     public BlueprintFrame CurrentlySelectedBP => currentlySelectedBP;
     public BarracksUI BarracksUI => barracksUI.GetComponent<BarracksUI>();
+    public WorkshopUI WorkshopUI => workshopUI.GetComponent<WorkshopUI>();
+    public EnemyAIManager EnemyAIManager => GetComponent<EnemyAIManager>();
+    public DayManager DayManager => GetComponent<DayManager>();
 
     public void SetupPlayer(Character characterSO)
     {
@@ -37,7 +40,7 @@ public class MainGameManager : MonoBehaviour
         characterCreationUI.SetActive(false);
         barracksUI.SetActive(true);
 
-        EnemyAIManager.instance.AddItemsBasedOnDay(FindObjectOfType<DayManager>().currentDay);
+        EnemyAIManager.instance.AddItemsBasedOnDay(FindObjectOfType<DayManager>().CurrentDay);
     }
 
     /// <summary>
