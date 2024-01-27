@@ -13,9 +13,13 @@ public class MainGameManager : MonoBehaviour
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private Player mainPlayer;
 
+    [SerializeField] private Player enemeyPlayer;
+    [SerializeField] private Character enemySO;
+
     private BlueprintFrame currentlySelectedBP = null;
 
     public Player MainPlayer => mainPlayer;
+    public Player EnemyPlayer => enemeyPlayer;
     public BlueprintFrame CurrentlySelectedBP => currentlySelectedBP;
 
     public void SetupPlayer(Character characterSO)
@@ -23,6 +27,10 @@ public class MainGameManager : MonoBehaviour
         mainPlayer = Instantiate(playerPrefab).GetComponent<Player>();
         mainPlayer.gameObject.SetActive(false);
         mainPlayer.SetupPlayer(characterSO);
+
+        enemeyPlayer = Instantiate(playerPrefab).GetComponent<Player>();
+        enemeyPlayer.gameObject.SetActive(false);
+        enemeyPlayer.SetupPlayer(enemySO);
 
         characterCreationUI.SetActive(false);
         barracksUI.SetActive(true);
