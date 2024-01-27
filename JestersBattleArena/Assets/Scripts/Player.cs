@@ -12,6 +12,7 @@ public class InventoryItem
 
     public Item ItemSO { get; private set; } = null;
     public int Weight => weight;
+    public string ItemName => itemName;
 
     public InventoryItem(Item newItem)
     {

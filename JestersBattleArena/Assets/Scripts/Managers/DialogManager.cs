@@ -5,7 +5,8 @@ public class DialogManager : MonoBehaviour
     public static DialogManager instance;
 
     public string emperorFavoriteColor;
-    public int interactionNumber = 5;
+    public int maxInteractionNumber = 6;
+    public int interactionNumber = 6;
 
     void Awake()
     {
