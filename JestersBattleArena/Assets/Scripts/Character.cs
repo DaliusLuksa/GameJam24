@@ -11,7 +11,8 @@ public enum Stat
     CrtR,
     CrtDmg,
     Luck,
-    Fun
+    Fun,
+    Attack
 }
 
 [Serializable]

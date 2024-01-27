@@ -58,6 +58,9 @@ public class Player : MonoBehaviour
     [SerializeField] private Dictionary<Resource, int> playerResources;
     [SerializeField] private int maxInventoryWeight = 30;
 
+    private Character characterSO;
+
+    public int HealthPoints { get; private set; } = 0;
     public List<CharacterStat> CharacterStats { get; private set; }
     public List<InventoryItem> PlayerInventory => playerInventory;
     public int GetResourceCount(Resource resource) { return playerResources[resource]; }
@@ -70,10 +73,7 @@ public class Player : MonoBehaviour
         }
         return value;
     }
-
-    private Character characterSO;
-
-    public Item itemToAdd;
+    public Sprite PlayerIcon => characterSO.Icon;
 
     public void SetupPlayer(Character newCharacterSO)
     {
@@ -82,8 +82,6 @@ public class Player : MonoBehaviour
 
         playerInventory = new List<InventoryItem>();
         GiveDefaultResources();
-
-        AddItemToPlayerInventory(itemToAdd);
     }
 
     public void AddItemToPlayerInventory(Item newItem)
@@ -136,5 +134,53 @@ public class Player : MonoBehaviour
         {
             playerResources[resource.resource] -= resource.value;
         }
+    }
+
+    public void SetupPlayerHealthBeforeFight()
+    {
+        foreach (CharacterStat stat in CharacterStats)
+        {
+            switch (stat.charStat)
+            {
+                case Stat.Def:
+                    HealthPoints += stat.value;
+                    break;
+                case Stat.Dex:
+                    HealthPoints += stat.value / 3;
+                    break;
+                case Stat.Str:
+                    HealthPoints += stat.value / 2;
+                    break;
+                case Stat.Luck:
+                    HealthPoints += stat.value * 2;
+                    break;
+            }
+        }
+    }
+
+    public int GetAttackValue()
+    {
+        foreach (CharacterStat stat in CharacterStats)
+        {
+            if (stat.charStat == Stat.Attack)
+            {
+                return stat.value;
+            }
+        }
+
+        return 0;
+    }
+
+    public int GetDefenseValue()
+    {
+        foreach (CharacterStat stat in CharacterStats)
+        {
+            if (stat.charStat == Stat.Def)
+            {
+                return stat.value;
+            }
+        }
+
+        return 0;
     }
 }

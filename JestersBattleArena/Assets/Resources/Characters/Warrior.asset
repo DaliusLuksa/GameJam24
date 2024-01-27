@@ -39,3 +39,6 @@ MonoBehaviour:
   - name: Fun
     charStat: 7
     value: 0
+  - name: Attack
+    charStat: 8
+    value: 1
