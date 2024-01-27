@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb8b69f402fabda418c634f1cd80b2eb, type: 3}
-  m_Name: Dialog6
+  m_Name: Dialog1
   m_EditorClassIdentifier: 
-  line: {fileID: 11400000, guid: 04a7727bdada8664b82037086de0a500, type: 2}
-  character: {fileID: 11400000, guid: c95f3215eb741bb42aa62fc8c1ededdb, type: 2}
-  nextDialog: {fileID: 11400000, guid: da017499f6a30f342a3d1d731f914add, type: 2}
+  line: {fileID: 11400000, guid: a12fd7dcd4e426442a92bb4527702c28, type: 2}
+  character: {fileID: 11400000, guid: faaf9a70f1e47d245944ca0b494e0e71, type: 2}
+  nextDialog: {fileID: 0}
   choices: []
   reward:
     resourcesToAward: []
     itemToAward: {fileID: 0}
-  isClueGiven: 1
-  interactionCost: 1
+  isClueGiven: 0
+  interactionCost: 0

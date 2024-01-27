@@ -9,10 +9,12 @@ public class DialogDisplay : MonoBehaviour
     public TMP_Text dialogText;
     public GameObject choices;
     private Dialog dialog;
+    public Dialog noInteractionCountDialog;
     public GameObject choiceButtonPrefab;
     public GameObject DialogNextButton;
     public GameObject DialogSelection;
     public Image speakerImage;
+   
 
     public void loadDialog(Dialog newDialog)
     {
@@ -31,6 +33,10 @@ public class DialogDisplay : MonoBehaviour
         if(closeDialogIfEmpty(dialog)) {
             return;
         };
+        
+        if(DialogManager.instance.interactionNumber == 0) {
+            loadDialog(noInteractionCountDialog);
+        }
         updateDialog(dialog);
     }
 
@@ -38,6 +44,8 @@ public class DialogDisplay : MonoBehaviour
         dialogText.text = dialog.line.text;
         speakerName.text = dialog.character.characterName;
         speakerImage.sprite = dialog.character.sprite;
+        DialogManager.instance.interactionNumber -= dialog.interactionCost;
+
 
         Player mainPlayer = FindObjectOfType<MainGameManager>().MainPlayer;
         foreach (ResourceCost resourceReward in dialog.reward.resourcesToAward)
@@ -50,7 +58,7 @@ public class DialogDisplay : MonoBehaviour
         }
 
         if(dialog.isClueGiven) {
-            string randomColor = ClueManager.instance.addEmperorsColorClue();
+            string randomColor = DialogManager.instance.addEmperorsColorClue();
             dialogText.text = dialogText.text.Replace("{insert color}", randomColor);
         }
 

@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class ClueManager : MonoBehaviour
+public class DialogManager : MonoBehaviour
 {
-    public static ClueManager instance;
+    public static DialogManager instance;
 
     public string emperorFavoriteColor;
+    public int interactionNumber = 5;
 
     void Awake()
     {

@@ -23,6 +23,7 @@ public class MainGameManager : MonoBehaviour
 
         characterCreationUI.SetActive(false);
         barracksUI.SetActive(true);
+        EnemyAIManager.instance.AddItemsBasedOnDay(1);
     }
 
     /// <summary>
