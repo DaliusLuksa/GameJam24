@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a40d05f8f8b092b4b88f12f468fa6000, type: 3}
   m_Name: WoodenBreastplate
   m_EditorClassIdentifier: 
+  itemType: 0
   name: Wooden Breastplate
-  icon: {fileID: 21300000, guid: 872b650a224347547809949ce8139cda, type: 3}
+  icon: {fileID: 21300000, guid: 9f1b10412a2de2146b2e9c09d8ac3227, type: 3}
   minAttackDamage: 0
   maxAttackDamage: 0
   minDefense: 4

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a40d05f8f8b092b4b88f12f468fa6000, type: 3}
   m_Name: GoldBreastplate
   m_EditorClassIdentifier: 
+  itemType: 0
   name: Gold Breastplate
-  icon: {fileID: 21300000, guid: 22c16254a080a4f43a9348de0b7cb5a5, type: 3}
+  icon: {fileID: 21300000, guid: 94c74c6e7d3d86d4d9c4def2cb2e7fce, type: 3}
   minAttackDamage: 0
   maxAttackDamage: 0
   minDefense: 7
