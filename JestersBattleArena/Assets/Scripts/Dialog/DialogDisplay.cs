@@ -13,6 +13,7 @@ public class DialogDisplay : MonoBehaviour
     public GameObject choiceButtonPrefab;
     public GameObject DialogNextButton;
     public GameObject DialogSelection;
+    public TMP_Text InteractionCount;
     public Image speakerImage;
    
 
@@ -22,6 +23,7 @@ public class DialogDisplay : MonoBehaviour
         if(closeDialogIfEmpty(dialog)) {
             return;
         };
+        updateNoInteractionDialogIfNotEnoughInteractions();
         updateDialog(dialog);
         gameObject.SetActive(true);
         DialogSelection.gameObject.SetActive(false);
@@ -33,10 +35,7 @@ public class DialogDisplay : MonoBehaviour
         if(closeDialogIfEmpty(dialog)) {
             return;
         };
-        
-        if(DialogManager.instance.interactionNumber == 0) {
-            loadDialog(noInteractionCountDialog);
-        }
+        updateNoInteractionDialogIfNotEnoughInteractions();
         updateDialog(dialog);
     }
 
@@ -45,7 +44,7 @@ public class DialogDisplay : MonoBehaviour
         speakerName.text = dialog.character.characterName;
         speakerImage.sprite = dialog.character.sprite;
         DialogManager.instance.interactionNumber -= dialog.interactionCost;
-
+        InteractionCount.text = DialogManager.instance.maxInteractionNumber.ToString()+"/"+DialogManager.instance.interactionNumber.ToString();
 
         Player mainPlayer = FindObjectOfType<MainGameManager>().MainPlayer;
         foreach (ResourceCost resourceReward in dialog.reward.resourcesToAward)
@@ -60,6 +59,9 @@ public class DialogDisplay : MonoBehaviour
         if(dialog.isClueGiven) {
             string randomColor = DialogManager.instance.addEmperorsColorClue();
             dialogText.text = dialogText.text.Replace("{insert color}", randomColor);
+        }
+        if(dialog.isGladiotorInfoGiven) {
+            dialogText.text += " You find that enemy gladiator has a " + EnemyAIManager.instance.getRandomItemName();  
         }
 
         if(dialog.choices.Any(x => x != null)) {
@@ -104,5 +106,13 @@ public class DialogDisplay : MonoBehaviour
         loadDialog(newDialog.nextDialog);
         
         DialogNextButton.SetActive(true);
+    }
+
+    void updateNoInteractionDialogIfNotEnoughInteractions()
+    {
+        if(DialogManager.instance.interactionNumber == 0 || DialogManager.instance.interactionNumber - dialog.interactionCost < 0) {
+            dialog = noInteractionCountDialog;
+            updateDialog(dialog);
+        }
     }
 }

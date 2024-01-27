@@ -87,6 +87,13 @@ public class EnemyAIManager : MonoBehaviour
         }
     }
 
+    public string getRandomItemName()
+    {
+        System.Random random = new System.Random();
+        int randomIndex = random.Next(enemyInventory.Count);
+        return enemyInventory[randomIndex].ItemName;
+    }
+
     void ShuffleAllItems(Item[] Items) {
         for (int i = Items.Length - 1; i > 0; i--) {
             int range = Random.Range(0, i);

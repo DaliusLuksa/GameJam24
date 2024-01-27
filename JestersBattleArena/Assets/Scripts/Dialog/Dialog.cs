@@ -20,6 +20,7 @@ public class Dialog : ScriptableObject
     public DialogueReward reward;
 
     public bool isClueGiven;
+    public bool isGladiotorInfoGiven;
 
     public int interactionCost;
 }
