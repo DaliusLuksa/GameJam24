@@ -22,9 +22,9 @@ MonoBehaviour:
   resourcesToCraft:
   - name: Wood
     resource: 0
-    value: 5
-  - name: Steel
-    resource: 1
+    value: 10
+  - name: Leather
+    resource: 2
     value: 1
   optionalRandomStats:
   - name: Str
