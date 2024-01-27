@@ -55,13 +55,15 @@ public class DialogDisplay : MonoBehaviour
         {
             mainPlayer.AddItemToPlayerInventory(dialog.reward.itemToAward);
         }
-
         if(dialog.isClueGiven) {
             string randomColor = DialogManager.instance.addEmperorsColorClue();
             dialogText.text = dialogText.text.Replace("{insert color}", randomColor);
         }
         if(dialog.isGladiotorInfoGiven) {
             dialogText.text += " You find that enemy gladiator has a " + EnemyAIManager.instance.getRandomItemName();  
+        }
+        if(dialog.happinessAddition > 0) {
+            FindObjectOfType<HappinessManager>().AddHappiness(dialog.happinessAddition);
         }
 
         if(dialog.choices.Any(x => x != null)) {

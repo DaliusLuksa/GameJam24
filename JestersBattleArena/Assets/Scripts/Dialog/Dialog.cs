@@ -23,4 +23,5 @@ public class Dialog : ScriptableObject
     public bool isGladiotorInfoGiven;
 
     public int interactionCost;
+    public int happinessAddition;
 }

@@ -20,3 +20,6 @@ MonoBehaviour:
     resourcesToAward: []
     itemToAward: {fileID: 0}
   isClueGiven: 0
+  isGladiotorInfoGiven: 0
+  interactionCost: 1
+  happinessAddition: 5

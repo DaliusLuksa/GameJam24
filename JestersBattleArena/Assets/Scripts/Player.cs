@@ -138,24 +138,35 @@ public class Player : MonoBehaviour
 
     public void SetupPlayerHealthBeforeFight()
     {
+        HealthPoints = 0;
         foreach (CharacterStat stat in CharacterStats)
         {
             switch (stat.charStat)
             {
                 case Stat.Def:
-                    HealthPoints += stat.value;
+                    HealthPoints += (int)stat.value;
                     break;
                 case Stat.Dex:
-                    HealthPoints += stat.value / 3;
+                    HealthPoints += (int)stat.value / 3;
                     break;
                 case Stat.Str:
-                    HealthPoints += stat.value / 2;
+                    HealthPoints += (int)stat.value / 2;
                     break;
                 case Stat.Luck:
-                    HealthPoints += stat.value * 2;
+                    HealthPoints += (int)stat.value * 2;
                     break;
             }
         }
+    }
+
+    /// <summary>
+    /// Deal damage to the player
+    /// </summary>
+    /// <returns>True if the player is dead</returns>
+    public bool DealDamage(int value, int enemyDefense)
+    {
+        HealthPoints -= value;
+        return HealthPoints <= 0;
     }
 
     public int GetAttackValue()
@@ -164,7 +175,7 @@ public class Player : MonoBehaviour
         {
             if (stat.charStat == Stat.Attack)
             {
-                return stat.value;
+                return (int)stat.value;
             }
         }
 
@@ -177,10 +188,23 @@ public class Player : MonoBehaviour
         {
             if (stat.charStat == Stat.Def)
             {
-                return stat.value;
+                return (int)stat.value;
             }
         }
 
         return 0;
+    }
+
+    public float GetAttackSpeedTime()
+    {
+        foreach (CharacterStat stat in CharacterStats)
+        {
+            if (stat.charStat == Stat.AttackSpeed)
+            {
+                return 1 - stat.value + 1;
+            }
+        }
+
+        return 0f;
     }
 }
