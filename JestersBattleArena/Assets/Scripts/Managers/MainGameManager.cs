@@ -9,6 +9,7 @@ public class MainGameManager : MonoBehaviour
     [SerializeField] private GameObject barracksUI;
     [SerializeField] private GameObject townUI;
     [SerializeField] private GameObject fightArenaUI;
+    [SerializeField] private GameObject mainMenuUi;
 
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private Player mainPlayer;
@@ -84,6 +85,15 @@ public class MainGameManager : MonoBehaviour
         innUI.SetActive(false);
         townUI.SetActive(true);
         barracksUI.SetActive(false);
+    }
+
+    /// <summary>
+    /// Player comes from main menu
+    /// </summary>
+    public void MoveToCharacterCreation()
+    {
+        characterCreationUI.SetActive(true);
+        mainMenuUi.SetActive(false);
     }
 
     public void StartFight()

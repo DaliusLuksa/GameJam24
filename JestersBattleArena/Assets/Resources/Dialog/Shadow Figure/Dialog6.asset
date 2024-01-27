@@ -16,5 +16,9 @@ MonoBehaviour:
   character: {fileID: 11400000, guid: e326c955d1069614db9672666e5f8a37, type: 2}
   nextDialog: {fileID: 11400000, guid: c76815bbd2f87684da2b070ef01fceb2, type: 2}
   choices: []
-  rewards: []
+  reward:
+    resourcesToAward: []
+    itemToAward: {fileID: 0}
   isClueGiven: 0
+  isGladiotorInfoGiven: 1
+  interactionCost: 2

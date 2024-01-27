@@ -20,3 +20,5 @@ MonoBehaviour:
     resourcesToAward: []
     itemToAward: {fileID: 11400000, guid: 87ec2b6d9a585af4daca981602647b0f, type: 2}
   isClueGiven: 0
+  isGladiotorInfoGiven: 0
+  interactionCost: 3

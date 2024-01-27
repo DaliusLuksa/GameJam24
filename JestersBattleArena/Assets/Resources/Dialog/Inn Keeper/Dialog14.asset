@@ -20,6 +20,8 @@ MonoBehaviour:
     resourcesToAward:
     - name: Leather
       resource: 2
-      value: 200
+      value: 3
     itemToAward: {fileID: 11400000, guid: 609695387f6758f4ea8300b8d02e4159, type: 2}
   isClueGiven: 0
+  isGladiotorInfoGiven: 0
+  interactionCost: 1
