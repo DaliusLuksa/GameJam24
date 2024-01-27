@@ -92,6 +92,12 @@ public class MainGameManager : MonoBehaviour
         fightArenaUI.SetActive(true);
     }
 
+    public void ReturnFromTheFightArena()
+    {
+        fightArenaUI.SetActive(false);
+        barracksUI.SetActive(true);
+    }
+
     public void UpdateLatestSelectedWorkshopBP(BlueprintFrame selectedBP)
     {
         currentlySelectedBP = selectedBP;

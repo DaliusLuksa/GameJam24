@@ -42,3 +42,6 @@ MonoBehaviour:
   - name: Attack
     charStat: 8
     value: 1
+  - name: AttackSpeed
+    charStat: 9
+    value: 0.5

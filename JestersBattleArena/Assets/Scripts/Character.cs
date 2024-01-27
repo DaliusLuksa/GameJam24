@@ -12,7 +12,8 @@ public enum Stat
     CrtDmg,
     Luck,
     Fun,
-    Attack
+    Attack,
+    AttackSpeed
 }
 
 [Serializable]
@@ -20,7 +21,7 @@ public struct CharacterStat
 {
     public string name;
     public Stat charStat;
-    public int value;
+    public float value;
 }
 
 [CreateAssetMenu(fileName = "New Character", menuName = "Character")]

@@ -5657,14 +5657,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa376bebe3bed3f4cadc712262143f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInfoRoot: {fileID: 1969074969}
   playerHPText: {fileID: 2096285144}
   playerAttackText: {fileID: 1355280951}
   playerArmorText: {fileID: 876394582}
+  enemyInfoRoot: {fileID: 1647162621}
   enemyHPText: {fileID: 2042381515}
   enemyAttackText: {fileID: 1987796065}
   enemyArmorText: {fileID: 2000841639}
   playerImage: {fileID: 633150998}
   enemyImage: {fileID: 1761404553}
+  endFightWindowRoot: {fileID: 1212834399}
+  returnButton: {fileID: 713640969}
+  endResultText: {fileID: 928052197}
+  gainedLootText: {fileID: 568550085}
+  victoryRewards:
+    resourcesToAward:
+    - name: Wood
+      resource: 0
+      value: 10
+    - name: Steel
+      resource: 1
+      value: 15
+    - name: Leather
+      resource: 2
+      value: 5
+    itemToAward: {fileID: 0}
+  defeatRewards:
+    resourcesToAward:
+    - name: Wood
+      resource: 0
+      value: 6
+    - name: Leather
+      resource: 2
+      value: 4
+    itemToAward: {fileID: 0}
 --- !u!1 &1439371557
 GameObject:
   m_ObjectHideFlags: 0
