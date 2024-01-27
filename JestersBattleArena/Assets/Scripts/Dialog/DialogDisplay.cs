@@ -16,7 +16,6 @@ public class DialogDisplay : MonoBehaviour
     public TMP_Text InteractionCount;
     public Image speakerImage;
    
-
     public void loadDialog(Dialog newDialog)
     {
         dialog = newDialog;
@@ -42,7 +41,7 @@ public class DialogDisplay : MonoBehaviour
     void updateDialog(Dialog dialog) {
         dialogText.text = dialog.line.text;
         speakerName.text = dialog.character.characterName;
-        speakerImage.sprite = dialog.character.sprite;
+        speakerImage.sprite = dialog.character.sprite ? dialog.character.sprite : FindObjectOfType<MainGameManager>().MainPlayer.PlayerIcon;
         DialogManager.instance.interactionNumber -= dialog.interactionCost;
         InteractionCount.text = DialogManager.instance.interactionNumber.ToString()+"/"+DialogManager.instance.maxInteractionNumber.ToString();
 
