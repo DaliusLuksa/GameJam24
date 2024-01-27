@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public enum CharacterEquipmentSlot
@@ -12,7 +13,7 @@ public enum CharacterEquipmentSlot
     None
 }
 
-public class CharacterEquipmentSlotUI : MonoBehaviour
+public class CharacterEquipmentSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private Image helmetSlot;
     [SerializeField] private Image plateSlot;
@@ -21,7 +22,13 @@ public class CharacterEquipmentSlotUI : MonoBehaviour
     [SerializeField] private Image mainHandSlot;
     [SerializeField] private Image offHandSlot;
 
+    private ItemInfoWindowUI itemInfoWindowUI = null;
     private InventoryItem item;
+
+    private void Awake()
+    {
+        itemInfoWindowUI = FindObjectOfType<ItemInfoWindowUI>();
+    }
 
     public InventoryItem SetupSlot(InventoryItem itemToSetup, CharacterEquipmentSlot slot)
     {
@@ -51,5 +58,23 @@ public class CharacterEquipmentSlotUI : MonoBehaviour
         }
 
         return itemToReturn;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (item == null) { return; }
+        itemInfoWindowUI.UpdateInfo(item);
+        itemInfoWindowUI.Root.SetActive(true);
+    }
+
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        itemInfoWindowUI.Root.SetActive(false);
+    }
+
+    private void OnDestroy()
+    {
+        itemInfoWindowUI.Root.SetActive(false);
     }
 }
