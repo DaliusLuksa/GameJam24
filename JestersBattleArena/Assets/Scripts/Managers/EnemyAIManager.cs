@@ -45,6 +45,7 @@ public class EnemyAIManager : MonoBehaviour
 
     public void AddItemsBasedOnDay(int day)
     {
+        enemyInventory.Clear();
         Item[] allItems =  Resources.FindObjectsOfTypeAll(typeof(Item)) as Item[];
         ShuffleAllItems(allItems);
         

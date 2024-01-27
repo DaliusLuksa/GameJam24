@@ -31,4 +31,9 @@ public class DialogManager : MonoBehaviour
 
         return colors[randomIndex];
     }
+
+    public void Reset() {
+        interactionNumber = 5;
+        emperorFavoriteColor = "";
+    }
 }
