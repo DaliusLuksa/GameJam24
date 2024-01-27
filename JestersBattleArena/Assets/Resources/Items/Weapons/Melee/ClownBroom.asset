@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85339f579be48d34b91f90d081a749d3, type: 3}
   m_Name: ClownBroom
   m_EditorClassIdentifier: 
+  itemType: 1
   name: Clown Broom
-  icon: {fileID: 21300000, guid: 8778f78eec2086b4e9eed88cc51dccfc, type: 3}
+  icon: {fileID: 21300000, guid: a93fef48ec191e143a1a851d4db4c16a, type: 3}
   minAttackDamage: 1
   maxAttackDamage: 1
   minDefense: 0

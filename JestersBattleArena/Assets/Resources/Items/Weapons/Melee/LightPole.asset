@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85339f579be48d34b91f90d081a749d3, type: 3}
   m_Name: LightPole
   m_EditorClassIdentifier: 
+  itemType: 1
   name: Light Pole
-  icon: {fileID: 21300000, guid: 5b9dcc2f72cc1d243bb4162f8a3264dd, type: 3}
+  icon: {fileID: 21300000, guid: 36cb94db356fc3244a7b6cf5054a1d97, type: 3}
   minAttackDamage: 2
   maxAttackDamage: 4
   minDefense: 0

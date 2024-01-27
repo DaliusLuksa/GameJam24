@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85339f579be48d34b91f90d081a749d3, type: 3}
   m_Name: StopSign
   m_EditorClassIdentifier: 
+  itemType: 1
   name: Stop Sign
-  icon: {fileID: 21300000, guid: 2000db64b447f9a45878feaf591e63ce, type: 3}
+  icon: {fileID: 21300000, guid: 8d8571e69174937438f36a933addb573, type: 3}
   minAttackDamage: 3
   maxAttackDamage: 6
   minDefense: 0

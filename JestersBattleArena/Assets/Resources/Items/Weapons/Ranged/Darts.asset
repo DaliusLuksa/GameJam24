@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85339f579be48d34b91f90d081a749d3, type: 3}
   m_Name: Darts
   m_EditorClassIdentifier: 
+  itemType: 1
   name: Darts
-  icon: {fileID: 21300000, guid: 094ca617a5138cf4d8867c69b399f165, type: 3}
+  icon: {fileID: 21300000, guid: 384c1e11b8b3bbf458266618a64977ec, type: 3}
   minAttackDamage: 2
   maxAttackDamage: 5
   minDefense: 0

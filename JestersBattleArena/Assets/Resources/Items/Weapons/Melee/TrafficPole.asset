@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85339f579be48d34b91f90d081a749d3, type: 3}
   m_Name: TrafficPole
   m_EditorClassIdentifier: 
+  itemType: 1
   name: Traffic Pole
-  icon: {fileID: 21300000, guid: acbb5d4b1eac5e846a1d4fd849dc28ef, type: 3}
+  icon: {fileID: 21300000, guid: 71c993e520743524fa45c49758379f0e, type: 3}
   minAttackDamage: 4
   maxAttackDamage: 6
   minDefense: 0

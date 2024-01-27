@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85339f579be48d34b91f90d081a749d3, type: 3}
   m_Name: Kunai
   m_EditorClassIdentifier: 
+  itemType: 1
   name: Kunai
-  icon: {fileID: 21300000, guid: 031dc9e58c519f749ad62832ca0410df, type: 3}
+  icon: {fileID: 21300000, guid: 5fa0d359ecb451a4aa1a881d1aff7f3c, type: 3}
   minAttackDamage: 3
   maxAttackDamage: 7
   minDefense: 0

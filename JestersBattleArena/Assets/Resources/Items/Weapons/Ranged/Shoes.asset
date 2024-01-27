@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85339f579be48d34b91f90d081a749d3, type: 3}
   m_Name: Shoes
   m_EditorClassIdentifier: 
+  itemType: 1
   name: Shoes
-  icon: {fileID: 21300000, guid: af9475329b8c89444910fbee24239358, type: 3}
+  icon: {fileID: 21300000, guid: 8167af46ac89bdb418481082b7b2c6c1, type: 3}
   minAttackDamage: 0
   maxAttackDamage: 4
   minDefense: 0

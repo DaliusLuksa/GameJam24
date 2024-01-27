@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85339f579be48d34b91f90d081a749d3, type: 3}
   m_Name: SteelSword
   m_EditorClassIdentifier: 
+  itemType: 1
   name: Steel Sword
-  icon: {fileID: 21300000, guid: 9ea63b06d51e48046a26189a255aa868, type: 3}
+  icon: {fileID: 21300000, guid: 0dfdd803fb80a5042a8341eb28d2c44b, type: 3}
   minAttackDamage: 4
   maxAttackDamage: 7
   minDefense: 0

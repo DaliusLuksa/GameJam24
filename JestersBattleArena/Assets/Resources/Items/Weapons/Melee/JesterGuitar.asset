@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85339f579be48d34b91f90d081a749d3, type: 3}
   m_Name: JesterGuitar
   m_EditorClassIdentifier: 
+  itemType: 1
   name: Jester Guitar
-  icon: {fileID: 21300000, guid: 257d030384abd1c4bb5080f2f71f8df4, type: 3}
+  icon: {fileID: 21300000, guid: dcd6de4a6c328b14c93e11e7f430740d, type: 3}
   minAttackDamage: 0
   maxAttackDamage: 2
   minDefense: 0
