@@ -66,6 +66,8 @@ public class Player : MonoBehaviour
     private Character characterSO;
 
     public int HealthPoints { get; private set; } = 0;
+    public bool RangedItemEquiped { get; private set; } = false;
+    public bool MeleeItemEquiped { get; private set; } = false;
     public List<CharacterStat> CharacterStats { get; private set; }
     public List<InventoryItem> PlayerInventory => playerInventory;
     public int GetResourceCount(Resource resource) { return playerResources[resource]; }
@@ -196,6 +198,16 @@ public class Player : MonoBehaviour
             value += value * enemyCritDmg / 100;
         }
 
+        // Increase attack damage of ranged weapon with Dex stat and Melee with Str
+        if (MeleeItemEquiped)
+        {
+            value += GetStrValue() / 3;
+        }
+        else if (RangedItemEquiped)
+        {
+            value += GetDexValue() / 2;
+        }
+
         // Remove some attack damage based on the defense
         value -= value * enemyDefense / 100;
         HealthPoints -= value;
@@ -246,6 +258,15 @@ public class Player : MonoBehaviour
     {
         if (item.ItemSO is Weapon)
         {
+            if ((item.ItemSO as Weapon).WeaponType == WeaponType.Melee)
+            {
+                MeleeItemEquiped = true;
+            }
+            else if ((item.ItemSO as Weapon).WeaponType == WeaponType.Ranged)
+            {
+                RangedItemEquiped = true;
+            }
+
             for (int i = 0; i < CharacterStats.Count; i++)
             {
                 if (CharacterStats[i].charStat == Stat.AttackSpeed)
@@ -294,6 +315,9 @@ public class Player : MonoBehaviour
     {
         if (item.ItemSO is Weapon)
         {
+            MeleeItemEquiped = false;
+            RangedItemEquiped = false;
+
             for (int i = 0; i < CharacterStats.Count; i++)
             {
                 if (CharacterStats[i].charStat == Stat.AttackSpeed)
@@ -396,6 +420,32 @@ public class Player : MonoBehaviour
         foreach (CharacterStat stat in CharacterStats)
         {
             if (stat.charStat == Stat.CrtDmg)
+            {
+                return (int)stat.value;
+            }
+        }
+
+        return 0;
+    }
+
+    public int GetStrValue()
+    {
+        foreach (CharacterStat stat in CharacterStats)
+        {
+            if (stat.charStat == Stat.Str)
+            {
+                return (int)stat.value;
+            }
+        }
+
+        return 0;
+    }
+
+    public int GetDexValue()
+    {
+        foreach (CharacterStat stat in CharacterStats)
+        {
+            if (stat.charStat == Stat.Dex)
             {
                 return (int)stat.value;
             }
